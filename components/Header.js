@@ -18,10 +18,6 @@ const Header = () => {
   const { data, error } = useSWR("/api/page/header", fetcher);
 
   if (error) return <div>failed to load</div>;
-  // if (!data) return <div>loading...</div>;
-
-  // const primaryMenus = data?.menuItems?.edges;
-  // console.log(primaryMenus);
 
   return (
     <>
