@@ -93,11 +93,13 @@ export default function Home() {
       <section>
         <Banner data={data?.page?.ThreeColumnStaticPage?.banner} />
       </section>
-      <section>
-        <script
-          defer
-          src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
-        ></script>
+      <section ref={observe}>
+        {inView && (
+          <script
+            defer
+            src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
+          ></script>
+        )}
       </section>
       <section ref={observe}>
         {inView && <Content data={data?.page?.ThreeColumnStaticPage?.cards} />}
