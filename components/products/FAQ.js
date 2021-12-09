@@ -34,9 +34,9 @@ const FAQ = () => {
   //   console.log(faq)
   return (
     <>
-      <div className="mb-10 px-5 w-full float-left">
-        <h3>FAQs</h3>
-        <div className="xs:w-full md:w-4/5 mx-auto p-8 mb-10">
+      <div className="container">
+        <div className="xs:w-full">
+          <h3>FAQs</h3>
           <div className="shadow-md">
             {faq?.map((value, key) => (
               // console.log(data);

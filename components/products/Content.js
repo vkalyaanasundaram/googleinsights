@@ -44,25 +44,25 @@ const Content = ({ content, desc }) => {
   return (
     <>
       <div className={contentNav}>
-        <div className="w-full py-5 px-5 productSticky">
-          <span className="pr-10 text-pink">
-            <a href="#Requirement"> Requirements</a>
-          </span>
-          <span className="pr-10 text-pink">
-            <a href="#HowApply"> How To Apply</a>
-          </span>
-          <span className="pr-10 text-pink">
-            <a href="#Who"> Who is this For?</a>
-          </span>
+        <div className="container">
+          <div className="productSticky">
+            <span className="pr-10 text-pink">
+              <a href="#Requirement"> Requirements</a>
+            </span>
+            <span className="pr-10 text-pink">
+              <a href="#HowApply"> How To Apply</a>
+            </span>
+            <span className="pr-10 text-pink">
+              <a href="#Who"> Who is this For?</a>
+            </span>
+          </div>
         </div>
         <div className="w-full my-5 py-10 px-5 bg-kapitus">
           <div className="container text-center text-white text-2xl">
             {ReactHtmlParser(desc)}
           </div>
         </div>
-        <div className="float-left my-10 px-5">
-          <div className="container">{ReactHtmlParser(content)}</div>
-        </div>
+        <div className="container">{ReactHtmlParser(content)}</div>
       </div>
     </>
   );
