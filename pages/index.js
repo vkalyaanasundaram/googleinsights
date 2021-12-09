@@ -101,6 +101,7 @@ export default function Home() {
           ></script>
         )}
       </section> */}
+
       <section ref={observe}>
         {inView && <Content data={data?.page?.ThreeColumnStaticPage?.cards} />}
       </section>
