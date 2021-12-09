@@ -70,31 +70,33 @@ export default function Banner({ data }) {
             )}
           </div>
         </div>
-        <div className={bgText}>
-          <div className="xs:grid col-auto lg:grid grid-cols-2 gap-1 p-3">
-            <div className="text-kapitus mb-10">
-              <div className="xs:w-full text-3xl md:text-5xl">
-                {data?.bannerTitle}
-              </div>
-              <div className="text-sm md:text-xl lg:text-2xl my-10">
-                {ReactHtmlParser(data?.bannerDescription)}
-              </div>
-              <div className="xs:text-xs sm:text-lg mt-5 md:text-2xl text-kapitus">
-                {ReactHtmlParser(data?.bannerButton)}
+        <div className="container">
+          <div className={bgText}>
+            <div className="xs:grid col-auto lg:grid grid-cols-2 gap-1 p-3">
+              <div className="text-kapitus mb-10">
+                <div className="xs:w-full text-3xl md:text-5xl">
+                  {data?.bannerTitle}
+                </div>
+                <div className="text-sm md:text-xl lg:text-2xl my-10">
+                  {ReactHtmlParser(data?.bannerDescription)}
+                </div>
+                <div className="xs:text-xs sm:text-lg mt-5 md:text-2xl text-kapitus">
+                  {ReactHtmlParser(data?.bannerButton)}
+                </div>
+
+                <div className="xs:text-xl mt-5 text-xs text-blue-900 text-left copyrights">
+                  <p className="mt-5 text-xs">
+                    Copyright 2021 • Kapitus • All Rights Reserved Loans made in
+                    California are issued by Strategic Funding Source, Inc. dba
+                    Kapitus, pursuant to California Finance Lenders License No.
+                    603-G807.
+                  </p>
+                </div>
               </div>
 
-              <div className="xs:text-xl mt-5 text-xs text-blue-900 text-left copyrights">
-                <p className="mt-5 text-xs">
-                  Copyright 2021 • Kapitus • All Rights Reserved Loans made in
-                  California are issued by Strategic Funding Source, Inc. dba
-                  Kapitus, pursuant to California Finance Lenders License No.
-                  603-G807.
-                </p>
+              <div className="xs: hidden sm:hidden md:block ">
+                {/* {ReactHtmlParser(frmData)} */}
               </div>
-            </div>
-
-            <div className="xs: hidden sm:hidden md:block ">
-              {/* {ReactHtmlParser(frmData)} */}
             </div>
           </div>
         </div>

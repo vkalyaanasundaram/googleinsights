@@ -82,7 +82,6 @@ const Footer = dynamic(() => import("../../components/Footer"), {
 
 export default function ProductPage() {
   const { router, asPath } = useRouter();
-  // const { component } = router.query
 
   const { data, error } = useSWR(`/api/page/${asPath}`, fetcher);
 
@@ -130,7 +129,7 @@ export default function ProductPage() {
         <div className="w-full " ref={observe}>
           {inView && <Who data={WhoShould} />}
         </div>
-        <div className="w-full " ref={observe}>
+        <div className="w-full" ref={observe}>
           {inView && <GroupColumn />}
         </div>
         <div className="w-full" ref={observe}>

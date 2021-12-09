@@ -33,23 +33,21 @@ const GroupColumn = () => {
   const groupColumn = data?.productsService?.individualProducts?.groupColumn;
   return (
     <>
-      <div className="float-left clear">
-        <div className="container p-10">
-          <div className="xs:grid-cols-1 md:grid-cols-3 lg:grid grid-cols-3 gap-4">
-            {groupColumn?.map((value, key) => (
-              <div key={key}>
-                <div className="text-6xl text-center text-kapitus">
-                  {value?.groupNumber}
-                </div>
-                <div className="text-4xl text-center mt-10 text-kapitus">
-                  {value?.groupTitle}
-                </div>
-                <div className="text-base text-center mt-10 text-kapitus">
-                  {value?.groupContent}
-                </div>
+      <div className="container p-10">
+        <div className="xs:grid-cols-1 md:grid-cols-3 lg:grid grid-cols-3 gap-4">
+          {groupColumn?.map((value, key) => (
+            <div key={key}>
+              <div className="text-6xl text-center text-kapitus">
+                {value?.groupNumber}
               </div>
-            ))}
-          </div>
+              <div className="text-4xl text-center mt-10 text-kapitus">
+                {value?.groupTitle}
+              </div>
+              <div className="text-base text-center mt-10 text-kapitus">
+                {value?.groupContent}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </>

@@ -9,7 +9,7 @@ const Who = ({ data }) => {
   //   console.log(data)
   return (
     <>
-      <div id="Who" className="float-left">
+      <div id="Who">
         <div className="container py-10 px-5">{ReactHtmlParser(data)}</div>
       </div>
     </>

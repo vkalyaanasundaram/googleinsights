@@ -10,7 +10,7 @@ const HowToApply = ({ data }) => {
   return (
     <>
       <div id="HowApply">
-        <div className="container py-10 px-5">
+        <div className="px-5">
           <div className="container">{ReactHtmlParser(data)}</div>
         </div>
       </div>
