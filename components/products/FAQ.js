@@ -35,7 +35,7 @@ const FAQ = () => {
   return (
     <>
       <div className="container">
-        <div className="xs:w-full">
+        <div className="xs:w-full md:w-3/4">
           <h3>FAQs</h3>
           <div className="shadow-md">
             {faq?.map((value, key) => (
