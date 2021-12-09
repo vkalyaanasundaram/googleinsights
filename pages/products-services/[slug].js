@@ -105,6 +105,7 @@ export default function ProductPage() {
   const InvoiceBanner = data?.invoiceTemplate;
   const InvoiceGroupColumnOne = data?.invoiceTemplate?.groupColumnOne;
   const InvoiceGroupColumnTwo = data?.invoiceTemplate?.groupColumnTwo;
+  console.log(data);
 
   if (individualProducts) {
     return (
@@ -120,20 +121,20 @@ export default function ProductPage() {
         <div className="w-full " ref={observe}>
           <Content content={ProductContent} desc={ProductDescription} />
         </div>
-        <div className="w-full " ref={observe}>
-          {inView && <Requirements data={RequirementsData} />}
+        <div className="w-full ">
+          <Requirements data={RequirementsData} />
         </div>
-        <div className="w-full " ref={observe}>
-          {inView && <How data={HowToApply} />}
+        <div className="w-full ">
+          <How data={HowToApply} />
         </div>
-        <div className="w-full " ref={observe}>
-          {inView && <Who data={WhoShould} />}
+        <div className="w-full ">
+          <Who data={WhoShould} />
         </div>
-        <div className="w-full" ref={observe}>
-          {inView && <GroupColumn />}
+        <div className="w-full">
+          <GroupColumn />
         </div>
-        <div className="w-full" ref={observe}>
-          {inView && <FAQ />}
+        <div className="w-full">
+          <FAQ />
         </div>
 
         <div ref={observe}>
