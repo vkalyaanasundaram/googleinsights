@@ -12,7 +12,7 @@ export default async (req, resp) => {
 
   const QUERY_SINGLE_POST = `
   query HomePage {
-        page(idType: ID, id: "cG9zdDoyNDYzMA==") {
+         page(id: "index-2", idType: URI) {
           title
           uri
           ThreeColumnStaticPage {
