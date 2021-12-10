@@ -89,7 +89,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <section className="relative">
+      {/* <section className="relative">
         <div className="opacity-40">
           <div className={heroDesktopImage}>
             {data?.page?.ThreeColumnStaticPage?.banner?.bannerImage?.sourceUrl
@@ -103,7 +103,7 @@ export default function Home() {
                   data?.page?.ThreeColumnStaticPage?.banner?.bannerImage
                     ?.mediaDetails?.width
                 }
-                // height={data?.bannerImage?.mediaDetails?.height}
+                height={data?.bannerImage?.mediaDetails?.height}
                 height={350}
                 layout="responsive"
                 objectFit="cover"
@@ -157,21 +157,19 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="xs: hidden sm:hidden md:block ">
-                {/* {ReactHtmlParser(frmData)} */}
-              </div>
+              <div className="xs:hidden sm:hidden md:block "></div>
             </div>
           </div>
         </div>
-      </section>
-      <section className="container" ref={observe}>
+      </section> */}
+      {/* <section className="container" ref={observe}>
         {inView && (
           <script
             defer
             src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
           ></script>
         )}
-      </section>
+      </section> */}
 
       <section ref={observe}>
         {inView && <Content data={data?.page?.ThreeColumnStaticPage?.cards} />}
