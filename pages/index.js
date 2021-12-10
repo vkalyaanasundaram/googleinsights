@@ -84,28 +84,28 @@ export default function Home() {
   return (
     <>
       <Head>
-        {/* <script
+        <script
           defer
           src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
-        ></script> */}
+        ></script>
       </Head>
       <Header />
-      <section>
+      {/* <section>
         <Banner data={data?.page?.ThreeColumnStaticPage?.banner} />
       </section>
-      {/* <section ref={observe}>
+      <section ref={observe}>
         {inView && (
           <script
             defer
             src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
           ></script>
         )}
-      </section> */}
+      </section>
 
       <section ref={observe}>
         {inView && <Content data={data?.page?.ThreeColumnStaticPage?.cards} />}
       </section>
-      <section ref={observe}>{inView && <Footer />}</section>
+      <section ref={observe}>{inView && <Footer />}</section> */}
     </>
   );
 }
