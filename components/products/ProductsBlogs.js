@@ -25,8 +25,8 @@ export default function ProductsBlogs({ data }) {
                 </div>
               ) : (
                 <div className="contaner">
-                  <div className="flex">
-                    <div className="w-2/5">
+                  <div className="w-full">
+                    <div className="xs:w-full md:w-3/12 blogImg">
                       <div>
                         <Image
                           src={value?.blogImage?.sourceUrl}
@@ -36,7 +36,7 @@ export default function ProductsBlogs({ data }) {
                         />
                       </div>
                     </div>
-                    <div className="w-4/5 px-5">
+                    <div className="xs:w-full md:w-9/12 blogContent">
                       <div>
                         <h4>{value.title}</h4>
                         <p className="text-kapitus text-lg">
