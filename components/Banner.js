@@ -56,7 +56,7 @@ export default function Banner({ data }) {
             {data?.mobileBannerImage?.sourceUrl?.length > 0 && (
               <Image
                 src={data?.mobileBannerImage?.sourceUrl}
-                width={data?.mobileBannerImage?.mediaDetails?.width}
+                width={500}
                 height={750}
                 layout="responsive"
                 objectFit="cover"
@@ -82,15 +82,6 @@ export default function Banner({ data }) {
                 </div>
                 <div className="xs:text-xs sm:text-lg mt-5 md:text-2xl text-kapitus">
                   {ReactHtmlParser(data?.bannerButton)}
-                </div>
-
-                <div className="xs:text-xl mt-5 text-xs text-blue-900 text-left copyrights">
-                  <p className="mt-5 text-xs">
-                    Copyright 2021 • Kapitus • All Rights Reserved Loans made in
-                    California are issued by Strategic Funding Source, Inc. dba
-                    Kapitus, pursuant to California Finance Lenders License No.
-                    603-G807.
-                  </p>
                 </div>
               </div>
 

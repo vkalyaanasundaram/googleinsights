@@ -57,8 +57,8 @@ export default function IndividualBanner({ data }) {
                   src={MobileBannerImage}
                   layout="responsive"
                   objectFit="cover"
-                  width={data?.mobileBannerImage?.mediaDetails?.width}
-                  height={2000}
+                  width={500}
+                  height={900}
                   quality={100}
                   placeholder="blur"
                   blurDataURL={`data:image/svg+xml;base64,${toBase64(
