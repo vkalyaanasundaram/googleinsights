@@ -83,12 +83,12 @@ export default function Home() {
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <script
           defer
           src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
         ></script>
-      </Head>
+      </Head> */}
       <Header />
       {/* <section>
         <Banner data={data?.page?.ThreeColumnStaticPage?.banner} />
