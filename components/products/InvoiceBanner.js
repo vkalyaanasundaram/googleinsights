@@ -86,31 +86,33 @@ export default function IndividualBanner({ data }) {
               </div>
             )}
           </div>
-          <div className={bgText}>
-            <div className="xs:grid col-auto lg:grid grid-cols-2 gap-1 p-3">
-              <div className="text-kapitus mb-10 z-50">
-                <div className="xs:w-full text-2xl lg:text-5xl">
-                  {BannerTitle}
-                </div>
-                <div className="xs:text-lg mt-10 mb-10 lg:text-2xl text-green-900">
-                  {ReactHtmlParser(BannerDescription)}
-                </div>
+          <div className="container">
+            <div className={bgText}>
+              <div className="xs:grid col-auto lg:grid grid-cols-2 gap-1 p-3">
+                <div className="text-kapitus mb-10 z-50">
+                  <div className="xs:w-full text-2xl lg:text-5xl">
+                    {BannerTitle}
+                  </div>
+                  <div className="xs:text-lg mt-10 mb-10 lg:text-2xl text-green-900">
+                    {ReactHtmlParser(BannerDescription)}
+                  </div>
 
-                <div className="xs:text-sm mt-5 mb-5 md:text-xl text-kapitus">
-                  {BannerList?.map((value, key) => (
-                    <div key={key}>
-                      <div className="text-lg my-2">{value?.listTitle}</div>
-                      <div className="text-xs leading-8">
-                        {ReactHtmlParser(value?.bannerList)}
+                  <div className="xs:text-sm mt-5 mb-5 md:text-xl text-kapitus">
+                    {BannerList?.map((value, key) => (
+                      <div key={key}>
+                        <div className="text-lg my-2">{value?.listTitle}</div>
+                        <div className="text-xs leading-8">
+                          {ReactHtmlParser(value?.bannerList)}
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                  {ReactHtmlParser(data?.bannerButton)}
+                    ))}
+                    {ReactHtmlParser(data?.bannerButton)}
+                  </div>
                 </div>
-              </div>
 
-              <div className="xs: hidden sm:hidden md:block ">
-                <ApplyNow />
+                <div className="xs: hidden sm:hidden md:block ">
+                  <ApplyNow />
+                </div>
               </div>
             </div>
           </div>
