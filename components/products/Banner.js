@@ -67,8 +67,8 @@ export default function ProductsBanner({ data }) {
               <Image
                 src={data?.mobileBannerImage?.sourceUrl}
                 width={500}
-                height={data?.mobileBannerImage?.mediaDetails?.height}
-                // height={850}
+                // height={data?.mobileBannerImage?.mediaDetails?.height}
+                height={850}
                 layout="responsive"
                 objectFit="cover"
                 quality={100}
