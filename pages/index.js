@@ -90,10 +90,10 @@ export default function Home() {
         ></script>
       </Head> */}
       <Header />
-      {/* <section>
+      <section>
         <Banner data={data?.page?.ThreeColumnStaticPage?.banner} />
       </section>
-      <section ref={observe}>
+      {/* <section ref={observe}>
         {inView && (
           <script
             defer
