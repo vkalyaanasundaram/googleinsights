@@ -74,7 +74,8 @@ export default function IndividualBanner({ data }) {
                   alt=""
                   src={BannerImg}
                   width={data?.banner?.mediaDetails?.width}
-                  height={data?.banner?.mediaDetails?.height}
+                  // height={data?.banner?.mediaDetails?.height}
+                  height={900}
                   layout="responsive"
                   objectFit="cover"
                   quality={100}
