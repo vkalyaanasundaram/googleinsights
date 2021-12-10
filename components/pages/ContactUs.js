@@ -47,7 +47,7 @@ const ContactUs = (data) => {
   return (
     <div className="bg-gray-100">
       <div className="xs: grid-cols-1 md:grid grid-cols-2 gap-4">
-        <div className="xs:w-full md: w-1/2">
+        <div className="xs:w-full md:w-1/2">
           <Image
             src={contactData?.data?.image?.mediaItemUrl}
             width={750}
@@ -63,6 +63,7 @@ const ContactUs = (data) => {
           />
         </div>
         {/* <div>{ReactHtmlParser(contactData.data.form)}</div> */}
+        <div className="xs:w-full md:w-1/2">&nbsp;</div>
       </div>
       <div id="kapitus-map" className="w-full" style={{ height: 500 }}></div>
     </div>
