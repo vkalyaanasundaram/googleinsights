@@ -67,7 +67,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="bg-kapitus border-2 border-white">
+      <div className="bg-kapitus border-2 border-white px-5">
         <nav className="container flex items-center justify-between flex-wrap">
           <div className="flex items-center flex-shrink-0 text-white mr-6">
             <span className="tracking-tight">
