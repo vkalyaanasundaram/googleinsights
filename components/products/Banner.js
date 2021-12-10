@@ -49,8 +49,8 @@ export default function ProductsBanner({ data }) {
               <Image
                 src={data?.pageBanner?.sourceUrl}
                 width={data?.pageBanner?.mediaDetails?.width}
-                // height={data?.pageBanner?.mediaDetails?.height}
-                height={850}
+                height={data?.pageBanner?.mediaDetails?.height}
+                // height={850}
                 layout="responsive"
                 objectFit="cover"
                 quality={100}
@@ -67,8 +67,8 @@ export default function ProductsBanner({ data }) {
               <Image
                 src={data?.mobileBannerImage?.sourceUrl}
                 width={data?.mobileBannerImage?.mediaDetails?.width}
-                // height={data?.mobileBannerImage?.mediaDetails?.height}
-                height={850}
+                height={data?.mobileBannerImage?.mediaDetails?.height}
+                // height={850}
                 layout="responsive"
                 objectFit="cover"
                 quality={100}

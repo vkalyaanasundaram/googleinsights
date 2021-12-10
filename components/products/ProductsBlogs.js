@@ -4,15 +4,15 @@ import Link from "next/link";
 export default function ProductsBlogs({ data }) {
   return (
     <>
-      <div className="container py-10 px-5 ml-20">
-        <div className="w-full float-left clear-both my-10">
+      <div className="container py-10 px-5">
+        <div className="w-full my-10">
           <h3>{data?.individualProducts?.blogHeading}</h3>
         </div>
         {data?.individualProducts?.blogs.map((value, key) => (
           <div key={key} className="my-20">
             <>
               {key == 0 ? (
-                <div className="w-full">
+                <div className="xs:w-full my-10 ">
                   <h3 className="my-10">{value?.blogHeading}</h3>
                   <Image
                     src={value?.blogImage?.sourceUrl}

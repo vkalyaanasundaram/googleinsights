@@ -115,34 +115,35 @@ export default function ProductPage() {
         </Head>
         <Header />
         <div className="w-full">
-          <ProductBanner data={IndividualBanner} />
-        </div>
+          <div className="w-full">
+            <ProductBanner data={IndividualBanner} />
+          </div>
 
-        <div className="w-full " ref={observe}>
-          <Content content={ProductContent} desc={ProductDescription} />
-        </div>
-        <div className="w-full ">
-          <Requirements data={RequirementsData} />
-        </div>
-        <div className="w-full ">
-          <How data={HowToApply} />
-        </div>
-        <div className="w-full ">
-          <Who data={WhoShould} />
-        </div>
-        <div className="w-full">
-          <GroupColumn />
-        </div>
-        <div className="w-full">
-          <FAQ />
-        </div>
+          <div className="w-full" ref={observe}>
+            <Content content={ProductContent} desc={ProductDescription} />
+          </div>
+          <div className="w-full ">
+            <Requirements data={RequirementsData} />
+          </div>
+          <div className="w-full ">
+            <How data={HowToApply} />
+          </div>
+          <div className="w-full ">
+            <Who data={WhoShould} />
+          </div>
+          <div className="w-full">
+            <GroupColumn />
+          </div>
+          <div className="w-full">
+            <FAQ />
+          </div>
 
-        <div ref={observe}>
-          <ProductsBlogs data={data} />
-        </div>
-        {/* <div ref={observe}>{inView && <Footer />}</div> */}
-        <div className="w-full" ref={observe}>
-          {inView && <Footer />}
+          <div ref={observe}>
+            <ProductsBlogs data={data} />
+          </div>
+          <div className="w-full" ref={observe}>
+            {inView && <Footer />}
+          </div>
         </div>
       </>
     );
