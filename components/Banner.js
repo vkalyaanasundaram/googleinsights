@@ -40,7 +40,7 @@ export default function Banner({ data }) {
                 src={data?.bannerImage?.sourceUrl}
                 width={data?.bannerImage?.mediaDetails?.width}
                 // height={data?.bannerImage?.mediaDetails?.height}
-                height={600}
+                height={550}
                 layout="responsive"
                 objectFit="cover"
                 quality={100}
@@ -57,7 +57,7 @@ export default function Banner({ data }) {
               <Image
                 src={data?.mobileBannerImage?.sourceUrl}
                 width={data?.mobileBannerImage?.mediaDetails?.width}
-                height={1600}
+                height={600}
                 layout="responsive"
                 objectFit="cover"
                 quality={100}
