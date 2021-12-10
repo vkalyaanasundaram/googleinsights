@@ -103,7 +103,7 @@ export default function Home() {
                   data?.page?.ThreeColumnStaticPage?.banner?.bannerImage
                     ?.mediaDetails?.width
                 }
-                height={data?.bannerImage?.mediaDetails?.height}
+                // height={data?.bannerImage?.mediaDetails?.height}
                 height={350}
                 layout="responsive"
                 objectFit="cover"
