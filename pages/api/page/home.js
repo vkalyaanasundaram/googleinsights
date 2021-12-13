@@ -23,29 +23,7 @@ export default async (req, resp) => {
                 sourceUrl
               }
             }
-            banner {
-              bannerButton
-              bannerDescription
-              bannerTitle
-              bannerImage {
-                mediaDetails {
-                  width
-                  height
-                  file
-                }
-                sourceUrl
-              }
-              mobileBannerImage {
-                mediaDetails {
-                  width
-                  height
-                  file
-                }
-                sourceUrl
-              }
-            }
           }
-          id
         }
       }
   `;
