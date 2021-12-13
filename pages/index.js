@@ -89,7 +89,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      {/* <section className="relative">
+      <section className="relative">
         <div className="opacity-40">
           <div className={heroDesktopImage}>
             {data?.page?.ThreeColumnStaticPage?.banner?.bannerImage?.sourceUrl
@@ -161,7 +161,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
       {/* <section className="container" ref={observe}>
         {inView && (
           <script
@@ -171,9 +171,9 @@ export default function Home() {
         )}
       </section> */}
 
-      <section ref={observe}>
+      {/* <section ref={observe}>
         {inView && <Content data={data?.page?.ThreeColumnStaticPage?.cards} />}
-      </section>
+      </section> */}
       {/* <section ref={observe}>{inView && <Footer />}</section> */}
       {/* <Head>
         <script
