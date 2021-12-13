@@ -19,21 +19,14 @@ const Header = dynamic(() => import("../components/Header"), {
   },
   ssr: false,
 });
-const Banner = dynamic(() => import("../components/Banner"), {
-  loading: function ld() {
-    return <p>Loading...</p>;
-  },
-  ssr: false,
-});
+// const Banner = dynamic(() => import("../components/Banner"), {
+//   loading: function ld() {
+//     return <p>Loading...</p>;
+//   },
+//   ssr: false,
+// });
 
 const Content = dynamic(() => import("../components/Content"), {
-  loading: function ld() {
-    return <p>Loading...</p>;
-  },
-  ssr: false,
-});
-
-const FinanceSolution = dynamic(() => import("../components/FinanceSolution"), {
   loading: function ld() {
     return <p>Loading...</p>;
   },
@@ -86,10 +79,9 @@ export default function Home() {
       {/* <section>
         <Script src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb" />
       </section> */}
-      <section ref={observe}>
-        {inView && <Content data={data?.page?.ThreeColumnStaticPage?.cards} />}
+      <section>
+        <Content data={data?.page?.ThreeColumnStaticPage?.cards} />
       </section>
-
       <section ref={observe}>{inView && <Footer />}</section>
     </>
   );
