@@ -147,6 +147,9 @@ export default function Home() {
         </div>
       </section> */}
       <Banner data={BannerData} />
+      <section>
+        <script src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"></script>
+      </section>
       <section ref={observe}>
         <div className="xs:w-full">
           {inView && (
@@ -154,10 +157,11 @@ export default function Home() {
           )}
         </div>
       </section>
-      <section>
-        <Script src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb" />
-      </section>
+
       <section>{inView && <Footer />}</section>
+      <Head>
+        <script src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"></script>
+      </Head>
     </>
   );
 }
