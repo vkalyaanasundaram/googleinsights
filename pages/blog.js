@@ -141,9 +141,18 @@ export default function InfiniteScrollList() {
                           />
                         )}
                         <div className="xs:text-center md:text-lg text-kapitus text-left ">
-                          {ReactHtmlParser(key.title)}...
+                          <Link
+                            href={`/blog/${key.slug}`}
+                            passHref
+                            key={index}
+                            prefetch={false}
+                          >
+                            <a> {ReactHtmlParser(key.title)}</a>
+                          </Link>
                         </div>
-                        <div>{ReactHtmlParser(key.content)}</div>
+                        <div>
+                          {ReactHtmlParser(key.content.substring(0, 400))}...
+                        </div>
                         <div className="py-5">
                           <Link
                             href={`/blog/${key.slug}`}
