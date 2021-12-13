@@ -41,6 +41,7 @@ export default function Home() {
 
   let { asPath, pathname } = useRouter();
   const router = useRouter();
+
   const toBase64 = (str) =>
     typeof window === "undefined"
       ? Buffer.from(str).toString("base64")
@@ -59,6 +60,7 @@ export default function Home() {
     <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
     <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
   </svg>`;
+
   const { observe, inView } = useInView({
     onEnter: ({ unobserve }) => unobserve(), // only run once
     onLeave: ({ observe }) => observe(),
@@ -66,10 +68,12 @@ export default function Home() {
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
 
+  const BannerData = data?.page?.ThreeColumnStaticPage?.banner;
+
   return (
     <>
       <Header />
-      <section className="relative">
+      {/* <section className="relative">
         <div className="opacity-40">
           <div className={heroDesktopImage}>
             {data?.page?.ThreeColumnStaticPage?.banner?.bannerImage?.sourceUrl
@@ -141,7 +145,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <Banner data={BannerData} />
       <section ref={observe}>
         <div className="xs:w-full">
           {inView && (
