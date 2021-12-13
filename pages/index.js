@@ -13,8 +13,7 @@ import useSWR from "swr";
 import { useRouter } from "next/router";
 import useInView from "react-cool-inview";
 
-const Header = "../components/Header";
-
+import Header from "../components/Header";
 // const Banner = dynamic(() => import("../components/Banner"), {
 //   loading: function ld() {
 //     return <p>Loading...</p>;
@@ -22,19 +21,19 @@ const Header = "../components/Header";
 //   ssr: false,
 // });
 
-// const Content = dynamic(() => import("../components/Content"), {
-//   loading: function ld() {
-//     return <p>Loading...</p>;
-//   },
-//   ssr: false,
-// });
+const Content = dynamic(() => import("../components/Content"), {
+  loading: function ld() {
+    return <p>Loading...</p>;
+  },
+  ssr: false,
+});
 
-// const Footer = dynamic(() => import("../components/Footer"), {
-//   loading: function ld() {
-//     return <p>Loading...</p>;
-//   },
-//   ssr: false,
-// });
+const Footer = dynamic(() => import("../components/Footer"), {
+  loading: function ld() {
+    return <p>Loading...</p>;
+  },
+  ssr: false,
+});
 
 export default function Home() {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
