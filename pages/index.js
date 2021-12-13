@@ -50,5 +50,10 @@ export default function Home() {
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
 
-  return <div>Home page</div>;
+  return (
+    <>
+      <Header />
+      <div>Home page</div>
+    </>
+  );
 }
