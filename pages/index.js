@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import Script from "next/script";
 import ReactHtmlParser, { htmlparser2 } from "react-html-parser";
 import {
   bgWrap,
@@ -9,15 +10,8 @@ import {
   heroMobileImage,
 } from "../styles/Home.module.css";
 import useSWR from "swr";
-import { request } from "graphql-request";
 import { useRouter } from "next/router";
 import useInView from "react-cool-inview";
-import {
-  BrowserView,
-  MobileView,
-  isBrowser,
-  isMobile,
-} from "react-device-detect";
 
 const Header = dynamic(() => import("../components/Header"), {
   loading: function ld() {
@@ -89,26 +83,14 @@ export default function Home() {
   return (
     <>
       <Header />
-
-      <section className="container" ref={observe}>
-        {inView && (
-          <script
-            defer
-            src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
-          ></script>
-        )}
+      {/* <section>
+        <Script src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb" />
+      </section> */}
+      <section ref={observe}>
+        {inView && <Content data={data?.page?.ThreeColumnStaticPage?.cards} />}
       </section>
 
-      {/* <section ref={observe}>
-        {inView && <Content data={data?.page?.ThreeColumnStaticPage?.cards} />}
-      </section> */}
       <section ref={observe}>{inView && <Footer />}</section>
-      <Head>
-        <script
-          defer
-          src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
-        ></script>
-      </Head>
     </>
   );
 }
