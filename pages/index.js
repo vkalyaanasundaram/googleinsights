@@ -142,7 +142,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div>Home page</div>
+      <div className="clear-both float-left xs:w-full" ref={observe}>
+        {inView && <Content data={data?.page?.ThreeColumnStaticPage?.cards} />}
+      </div>
     </>
   );
 }
