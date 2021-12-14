@@ -80,9 +80,9 @@ export default function InfiniteScrollList() {
   const posts = data.posts.edges.map((edge) => edge.node);
   const haveMorePosts = Boolean(data.posts?.pageInfo?.hasNextPage);
 
-  const config = {
-    unstable_runtimeJS: false,
-  };
+  // const config = {
+  //   unstable_runtimeJS: false,
+  // };
 
   const toBase64 = (str) =>
     typeof window === "undefined"
@@ -111,8 +111,7 @@ export default function InfiniteScrollList() {
         </Head>
         <Header />
       </div>
-      {/* <div className="xs:grid-cols-1 md:grid-cols-1"> */}
-      {/* <div className="xs:w-full md:w-3/4 border-2 border-gray-200 "> */}
+
       <div className="w-full">
         <div className="flex flex-col md:flex-row">
           <div className="xs:w-full md:w-3/4 border-2 border-gray-200 ">
@@ -228,7 +227,7 @@ export default function InfiniteScrollList() {
         </div>
       </div>
       <div className="float-left clear-both">
-        <Footer className="" />
+        <Footer />
       </div>
     </>
   );
