@@ -25,7 +25,7 @@ const Header = () => {
         <div className="container">
           <div className="float-left w-9/12">
             <Link href="https://www.facebook.com/KapitusFinance/">
-              <a target="_blank">
+              <a target="_blank" rel="noreferrer">
                 <FaFacebookSquare
                   className="text-white mr-2 float-left"
                   size="25px"
@@ -33,7 +33,7 @@ const Header = () => {
               </a>
             </Link>
             <Link href="https://twitter.com/KapitusFinance">
-              <a target="_blank">
+              <a target="_blank" rel="noreferrer">
                 <FaTwitterSquare
                   className="text-white  mr-2 float-left"
                   size="25px"
@@ -41,7 +41,7 @@ const Header = () => {
               </a>
             </Link>
             <Link href="https://www.linkedin.com/company/kapitus/">
-              <a target="_blank">
+              <a target="_blank" rel="noreferrer">
                 <FaLinkedin
                   className="text-white mr-2 float-left"
                   size="25px"
@@ -49,7 +49,7 @@ const Header = () => {
               </a>
             </Link>
             <Link href="https://www.instagram.com/kapitus_financing/">
-              <a target="_blank">
+              <a target="_blank" rel="noreferrer">
                 <FaInstagram
                   className="text-white mr-2 float-left"
                   size="25px"
@@ -57,12 +57,12 @@ const Header = () => {
               </a>
             </Link>
             <Link href="https://www.youtube.com/channel/UCeCPsIXW-bxrVBQI_ilP_tA">
-              <a target="_blank">
+              <a target="_blank" rel="noreferrer">
                 <FaYoutube className="text-white mr-2 float-left" size="25px" />
               </a>
             </Link>
           </div>
-          <div className="float-left w-3/12 text-right text-white text-xs">
+          <div className="xs: text-sm md:float-left w-3/12 text-right text-white text-xs">
             Login | Call now: (800) 780-7133
           </div>
         </div>
