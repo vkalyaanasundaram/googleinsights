@@ -154,16 +154,12 @@ export default function Home() {
       </section> */}
       <Banner data={BannerData} />
       <section className="container" ref={observe}>
-        <div className="relative">
-          <div className="absolute top-5">
-            {inView && (
-              <Script
-                defer
-                src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
-              />
-            )}
-          </div>
-        </div>
+        {inView && (
+          <script
+            defer
+            src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
+          ></script>
+        )}
       </section>
       <section ref={observe}>
         <div className="xs:w-full">
