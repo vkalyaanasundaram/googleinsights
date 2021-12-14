@@ -79,7 +79,7 @@ export default function Home() {
         ></script>
       </Head>
       <Header />
-      <section className="relative">
+      {/* <section className="relative">
         <div className="opacity-40">
           <div className={heroDesktopImage}>
             {data?.page?.ThreeColumnStaticPage?.banner?.bannerImage?.sourceUrl
@@ -151,15 +151,19 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-      {/* <Banner data={BannerData} /> */}
+      </section> */}
+      <Banner data={BannerData} />
       <section className="container" ref={observe}>
-        {inView && (
-          <script
-            defer
-            src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
-          ></script>
-        )}
+        <div className="relative">
+          <div className="absolute top-5">
+            {inView && (
+              <Script
+                defer
+                src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
+              />
+            )}
+          </div>
+        </div>
       </section>
       <section ref={observe}>
         <div className="xs:w-full">
