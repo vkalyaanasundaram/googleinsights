@@ -14,13 +14,14 @@ import AllBlogs from "../components/blog/allBlogs";
 import BlogCategories from "../components/blog/categories";
 import SearchBlogs from "../components/blog/SearchBlogs";
 import Subscribe from "../components/blog/Subscribe";
+import Header from "../components/Header";
 
-const Header = dynamic(() => import("../components/Header"), {
-  loading: function ld() {
-    return <p>Loading...</p>;
-  },
-  ssr: false,
-});
+// const Header = dynamic(() => import("../components/Header"), {
+//   loading: function ld() {
+//     return <p>Loading...</p>;
+//   },
+//   ssr: false,
+// });
 
 const Footer = dynamic(() => import("../components/Footer"), {
   loading: function ld() {
