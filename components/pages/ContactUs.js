@@ -47,7 +47,7 @@ const ContactUs = (data) => {
   return (
     <div className="bg-gray-100">
       <div className="xs: grid-cols-1 md:grid grid-cols-2 gap-4">
-        <div className="xs:w-full md:w-1/2">
+        {/* <div className="xs:w-full md:w-1/2">
           <Image
             src={contactData?.data?.image?.mediaItemUrl}
             width={750}
@@ -61,7 +61,7 @@ const ContactUs = (data) => {
             )}`}
             alt=""
           />
-        </div>
+        </div> */}
         <div className="xs:w-full md:w-1/2">&nbsp;</div>
       </div>
       {/* <section id="kapitus-map" ref={observe}>
