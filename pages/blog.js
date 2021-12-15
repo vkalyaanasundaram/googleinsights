@@ -8,6 +8,12 @@ import Head from "next/head";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import ReactHtmlParser, { htmlparser2 } from "react-html-parser";
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from "react-device-detect";
 
 import RecentBlogs from "../components/blog/recentBlogs";
 import AllBlogs from "../components/blog/allBlogs";
@@ -115,70 +121,64 @@ export default function InfiniteScrollList() {
       <div className="w-full">
         <div className="flex flex-col md:flex-row">
           <div className="xs:w-full md:w-3/4 border-2 border-gray-200 ">
-            {posts?.map((key, index) => (
-              <>
-                {index === 0 ? (
-                  <div className="xs:hidden md:block w-full">
-                    <Link
-                      href={`/blog/${key.slug}`}
-                      passHref
-                      key={index}
-                      prefetch={false}
-                    >
-                      <div
-                        className="text-left mx-10"
-                        style={{
-                          width: "90%",
-                          height: "100%",
-                          position: "relative",
-                        }}
+            <BrowserView>
+              {posts?.map((key, index) => (
+                <>
+                  {index === 0 ? (
+                    <div className="w-full">
+                      <Link
+                        href={`/blog/${key.slug}`}
+                        passHref
+                        key={index}
+                        prefetch={false}
                       >
-                        {key?.featuredImage?.node?.sourceUrl.length > 0 && (
-                          <Image
-                            src={key?.featuredImage?.node?.sourceUrl}
-                            alt="Blogs Image"
-                            layout="fill"
-                            quality={100}
-                            objectFit="cover"
-                            placeholder="blur"
-                            blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                              shimmer(700, 475)
-                            )}`}
-                            className="blogImgSize"
-                          />
-                        )}
-                        <div className="xs:text-center md:text-lg text-kapitus text-left ">
-                          <Link
-                            href={`/blog/${key.slug}`}
-                            passHref
-                            key={index}
-                            prefetch={false}
-                          >
-                            <a> {ReactHtmlParser(key.title)}</a>
-                          </Link>
+                        <div className="text-left mx-10">
+                          {key?.featuredImage?.node?.sourceUrl.length > 0 && (
+                            <Image
+                              src={key?.featuredImage?.node?.sourceUrl}
+                              alt="Blogs Image"
+                              quality={100}
+                              placeholder="blur"
+                              blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                                shimmer(700, 475)
+                              )}`}
+                              width={1000}
+                              height={700}
+                              className="blogImgSize"
+                            />
+                          )}
+                          <div className="xs:text-center md:text-lg text-kapitus text-left ">
+                            <Link
+                              href={`/blog/${key.slug}`}
+                              passHref
+                              key={index}
+                              prefetch={false}
+                            >
+                              <a> {ReactHtmlParser(key.title)}</a>
+                            </Link>
+                          </div>
+                          <div>
+                            {ReactHtmlParser(key.content.substring(0, 400))}...
+                          </div>
+                          <div className="py-5">
+                            <Link
+                              href={`/blog/${key.slug}`}
+                              passHref
+                              key={index}
+                              prefetch={false}
+                            >
+                              Read More
+                            </Link>
+                          </div>
                         </div>
-                        <div>
-                          {ReactHtmlParser(key.content.substring(0, 400))}...
-                        </div>
-                        <div className="py-5">
-                          <Link
-                            href={`/blog/${key.slug}`}
-                            passHref
-                            key={index}
-                            prefetch={false}
-                          >
-                            Read More
-                          </Link>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                ) : (
-                  <div></div>
-                )}
-              </>
-            ))}
-
+                      </Link>
+                    </div>
+                  ) : (
+                    <div></div>
+                  )}
+                </>
+              ))}
+            </BrowserView>
             <div className="flex flex-col md:flex-row">
               <div className="xs:w-full md:w-full ">
                 <InfiniteScroll
