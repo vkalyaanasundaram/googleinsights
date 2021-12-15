@@ -53,6 +53,7 @@ export default function Contant() {
 
   return (
     <>
+      Contact us
       {/* <Header /> */}
       {/* <ContactUs data={ACFcontact} /> */}
       {/* <div className="xs: grid-cols-1 md:grid grid-cols-2 gap-4">
