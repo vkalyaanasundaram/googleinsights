@@ -34,25 +34,22 @@
 //     onLeave: ({ observe }) => observe(),
 //   });
 
-//   // useEffect(() => {
-//   //   const map = new mapboxgl.Map({
-//   //     container: "kapitus-map",
-//   //     style: "mapbox://styles/kapitus/cjtyljmho3vok1fntmnu0c8hq",
-//   //     /*center: [-73.98387980000001, 40.75704],*/
-//   //     center: [-1.98387980000001, 30.75704],
-//   //     zoom: 2,
-//   //   });
-//   // });
+//   useEffect(() => {
+//     const map = new mapboxgl.Map({
+//       container: "kapitus-map",
+//       style: "mapbox://styles/kapitus/cjtyljmho3vok1fntmnu0c8hq",
+//       /*center: [-73.98387980000001, 40.75704],*/
+//       center: [-1.98387980000001, 30.75704],
+//       zoom: 2,
+//     });
+//   });
 
 //   return (
-//     <>
-//       Contact us
-//       <Header />
-//       {/* <ContactUs data={ACFcontact} /> */}
+//     <div className="bg-gray-100">
 //       <div className="xs: grid-cols-1 md:grid grid-cols-2 gap-4">
 //         <div className="xs:w-full md:w-1/2">
 //           <Image
-//             src="https://kap-staging.us/wp-content/uploads/2020/05/HeroImages_secondarypage_contactus-2-1.jpg"
+//             src={contactData?.data?.image?.mediaItemUrl}
 //             width={750}
 //             height={600}
 //             layout="responsive"
@@ -67,8 +64,8 @@
 //         </div>
 //         <div className="xs:w-full md:w-1/2">&nbsp;</div>
 //       </div>
-//       <section ref={observe}>{inView && <Footer />}</section>
-//     </>
+//       <div id="kapitus-map" className="w-full" style={{ height: 500 }}></div>
+//     </div>
 //   );
 // };
 

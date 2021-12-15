@@ -2,6 +2,9 @@ import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import useInView from "react-cool-inview";
+import { useState, useEffect } from "react";
+
+var mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 
 // const Footer = dynamic(() => import("../components/Footer"), {
 //   loading: function ld() {
@@ -10,7 +13,7 @@ import useInView from "react-cool-inview";
 //   ssr: false,
 // });
 export default function Contant() {
-  // const { data, error } = useSWR(`/api/page/${asPath}`, fetcher);
+  mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
 
   const toBase64 = (str) =>
     typeof window === "undefined"
@@ -36,14 +39,18 @@ export default function Contant() {
     onLeave: ({ observe }) => observe(),
   });
 
-  // if (error) return <div>failed to load</div>;
-  // if (!data) return <div>loading...</div>;
-
-  // const ACFcontact = data?.ACFcontact;
+  useEffect(() => {
+    const map = new mapboxgl.Map({
+      container: "kapitus-map",
+      style: "mapbox://styles/kapitus/cjtyljmho3vok1fntmnu0c8hq",
+      /*center: [-73.98387980000001, 40.75704],*/
+      center: [-1.98387980000001, 30.75704],
+      zoom: 2,
+    });
+  });
 
   return (
     <>
-      Contact us
       <Header />
       {/* <ContactUs data={ACFcontact} /> */}
       <div className="xs: grid-cols-1 md:grid grid-cols-2 gap-4">
@@ -64,6 +71,7 @@ export default function Contant() {
         </div>
         <div className="xs:w-full md:w-1/2">&nbsp;</div>
       </div>
+      <div id="kapitus-map" className="w-full" style={{ height: 500 }}></div>
       {/* <section ref={observe}>{inView && <Footer />}</section> */}
       <Footer />
     </>
