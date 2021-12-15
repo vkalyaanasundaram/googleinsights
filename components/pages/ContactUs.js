@@ -45,11 +45,14 @@ const ContactUs = (data) => {
   // });
 
   return (
-    <div className="bg-gray-100">
+    <>
+      Contact us
+      <Header />
+      {/* <ContactUs data={ACFcontact} /> */}
       <div className="xs: grid-cols-1 md:grid grid-cols-2 gap-4">
-        {/* <div className="xs:w-full md:w-1/2">
+        <div className="xs:w-full md:w-1/2">
           <Image
-            src={contactData?.data?.image?.mediaItemUrl}
+            src="https://kap-staging.us/wp-content/uploads/2020/05/HeroImages_secondarypage_contactus-2-1.jpg"
             width={750}
             height={600}
             layout="responsive"
@@ -61,13 +64,11 @@ const ContactUs = (data) => {
             )}`}
             alt=""
           />
-        </div> */}
+        </div>
         <div className="xs:w-full md:w-1/2">&nbsp;</div>
       </div>
-      {/* <section id="kapitus-map" ref={observe}>
-        {inView && <div className="w-full" style={{ height: 500 }}></div>}
-      </section> */}
-    </div>
+      <section ref={observe}>{inView && <Footer />}</section>
+    </>
   );
 };
 

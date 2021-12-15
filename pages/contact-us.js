@@ -31,6 +31,11 @@ export default function Contant() {
     <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
   </svg>`;
 
+  const { observe, inView } = useInView({
+    onEnter: ({ unobserve }) => unobserve(), // only run once
+    onLeave: ({ observe }) => observe(),
+  });
+
   // if (error) return <div>failed to load</div>;
   // if (!data) return <div>loading...</div>;
 
@@ -60,6 +65,7 @@ export default function Contant() {
         <div className="xs:w-full md:w-1/2">&nbsp;</div>
       </div>
       {/* <section ref={observe}>{inView && <Footer />}</section> */}
+      <Footer />
     </>
   );
 }
