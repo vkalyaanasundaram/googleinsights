@@ -64,14 +64,8 @@ const ContactUs = (data) => {
         </div>
         <div className="xs:w-full md:w-1/2">&nbsp;</div>
       </div>
-      <section className="container" ref={observe}>
-        {inView && (
-          <div
-            id="kapitus-map"
-            className="w-full"
-            style={{ height: 500 }}
-          ></div>
-        )}
+      <section id="kapitus-map" ref={observe}>
+        {inView && <div className="w-full" style={{ height: 500 }}></div>}
       </section>
     </div>
   );
