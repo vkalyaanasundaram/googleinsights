@@ -21,6 +21,11 @@ export default function Contant() {
 
   const { data, error } = useSWR(`/api/page/${asPath}`, fetcher);
 
+  const { observe, inView } = useInView({
+    onEnter: ({ unobserve }) => unobserve(), // only run once
+    onLeave: ({ observe }) => observe(),
+  });
+
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
 
@@ -30,9 +35,7 @@ export default function Contant() {
     <>
       <Header />
       <ContactUs data={ACFcontact} />
-      <div>
-        <Footer />
-      </div>
+      <section ref={observe}>{inView && <Footer />}</section>
     </>
   );
 }
