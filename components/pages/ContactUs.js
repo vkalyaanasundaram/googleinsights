@@ -62,7 +62,6 @@ const ContactUs = (data) => {
             alt=""
           />
         </div>
-        {/* <div>{ReactHtmlParser(contactData.data.form)}</div> */}
         <div className="xs:w-full md:w-1/2">&nbsp;</div>
       </div>
       <div id="kapitus-map" className="w-full" style={{ height: 500 }}></div>
