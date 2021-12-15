@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import useInView from "react-cool-inview";
@@ -10,12 +11,12 @@ import ContactUs from "../components/pages/ContactUs";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-const Footer = dynamic(() => import("../components/Footer"), {
-  loading: function ld() {
-    return <p>Loading...</p>;
-  },
-  ssr: false,
-});
+// const Footer = dynamic(() => import("../components/Footer"), {
+//   loading: function ld() {
+//     return <p>Loading...</p>;
+//   },
+//   ssr: false,
+// });
 export default function Contant() {
   const { asPath, pathname } = useRouter();
 
@@ -52,9 +53,9 @@ export default function Contant() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {/* <ContactUs data={ACFcontact} /> */}
-      <div className="xs: grid-cols-1 md:grid grid-cols-2 gap-4">
+      {/* <div className="xs: grid-cols-1 md:grid grid-cols-2 gap-4">
         <div className="xs:w-full md:w-1/2">
           <Image
             src="https://kap-staging.us/wp-content/uploads/2020/05/HeroImages_secondarypage_contactus-2-1.jpg"
@@ -71,9 +72,8 @@ export default function Contant() {
           />
         </div>
         <div className="xs:w-full md:w-1/2">&nbsp;</div>
-      </div>
-
-      <section ref={observe}>{inView && <Footer />}</section>
+      </div> */}
+      {/* <section ref={observe}>{inView && <Footer />}</section> */}
     </>
   );
 }
