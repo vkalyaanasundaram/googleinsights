@@ -118,26 +118,33 @@ export default function InfiniteScrollList() {
             {posts?.map((key, index) => (
               <>
                 {index === 0 ? (
-                  <div className="w-full">
+                  <div className="xs:hidden md:block w-full">
                     <Link
                       href={`/blog/${key.slug}`}
                       passHref
                       key={index}
                       prefetch={false}
                     >
-                      <div className="text-left mx-10">
+                      <div
+                        className="text-left mx-10"
+                        style={{
+                          width: "90%",
+                          height: "100%",
+                          position: "relative",
+                        }}
+                      >
                         {key?.featuredImage?.node?.sourceUrl.length > 0 && (
                           <Image
                             src={key?.featuredImage?.node?.sourceUrl}
-                            width={1000}
-                            height={550}
                             alt="Blogs Image"
-                            objectFit="cover"
+                            layout="fill"
                             quality={100}
+                            objectFit="cover"
                             placeholder="blur"
                             blurDataURL={`data:image/svg+xml;base64,${toBase64(
                               shimmer(700, 475)
                             )}`}
+                            className="blogImgSize"
                           />
                         )}
                         <div className="xs:text-center md:text-lg text-kapitus text-left ">

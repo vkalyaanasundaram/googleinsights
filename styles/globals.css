@@ -13,6 +13,10 @@ body {
   background-color: yellowgreen;
   border-radius: 15px;
 }
+.blogImgSize {
+  width: 300px;
+  height: auto;
+}
 .blogImg {
   float: left;
   margin-right: 10px;
