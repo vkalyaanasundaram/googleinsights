@@ -34,15 +34,15 @@ const ContactUs = (data) => {
     onLeave: ({ observe }) => observe(),
   });
 
-  useEffect(() => {
-    const map = new mapboxgl.Map({
-      container: "kapitus-map",
-      style: "mapbox://styles/kapitus/cjtyljmho3vok1fntmnu0c8hq",
-      /*center: [-73.98387980000001, 40.75704],*/
-      center: [-1.98387980000001, 30.75704],
-      zoom: 2,
-    });
-  });
+  // useEffect(() => {
+  //   const map = new mapboxgl.Map({
+  //     container: "kapitus-map",
+  //     style: "mapbox://styles/kapitus/cjtyljmho3vok1fntmnu0c8hq",
+  //     /*center: [-73.98387980000001, 40.75704],*/
+  //     center: [-1.98387980000001, 30.75704],
+  //     zoom: 2,
+  //   });
+  // });
 
   return (
     <div className="bg-gray-100">
@@ -64,9 +64,9 @@ const ContactUs = (data) => {
         </div>
         <div className="xs:w-full md:w-1/2">&nbsp;</div>
       </div>
-      <section id="kapitus-map" ref={observe}>
+      {/* <section id="kapitus-map" ref={observe}>
         {inView && <div className="w-full" style={{ height: 500 }}></div>}
-      </section>
+      </section> */}
     </div>
   );
 };
