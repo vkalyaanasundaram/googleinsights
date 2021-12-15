@@ -2,8 +2,8 @@ import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import useInView from "react-cool-inview";
-import { useState, useEffect } from "react";
 
+import { useState, useEffect } from "react";
 var mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 
 // const Footer = dynamic(() => import("../components/Footer"), {
@@ -53,7 +53,7 @@ export default function Contant() {
     <>
       <Header />
       {/* <ContactUs data={ACFcontact} /> */}
-      <div className="xs: grid-cols-1 md:grid grid-cols-2 gap-4">
+      <div className="xs:grid-cols-1 md:grid grid-cols-2 gap-4">
         <div className="xs:w-full md:w-1/2">
           <Image
             src="https://kap-staging.us/wp-content/uploads/2020/05/HeroImages_secondarypage_contactus-2-1.jpg"
