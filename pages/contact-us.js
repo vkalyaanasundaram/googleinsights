@@ -1,20 +1,19 @@
 import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import dynamic from "next/dynamic";
 import useInView from "react-cool-inview";
 
 import { useState, useEffect } from "react";
-var mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
 
-// const Footer = dynamic(() => import("../components/Footer"), {
-//   loading: function ld() {
-//     return <p>Loading...</p>;
-//   },
-//   ssr: false,
-// });
+const Map = dynamic(() => import("../components/pages/ContactUs"), {
+  loading: function ld() {
+    return <p>Loading...</p>;
+  },
+  ssr: false,
+});
+
 export default function Contant() {
-  mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
-
   const toBase64 = (str) =>
     typeof window === "undefined"
       ? Buffer.from(str).toString("base64")
@@ -39,28 +38,17 @@ export default function Contant() {
     onLeave: ({ observe }) => observe(),
   });
 
-  useEffect(() => {
-    const map = new mapboxgl.Map({
-      container: "kapitus-map",
-      style: "mapbox://styles/kapitus/cjtyljmho3vok1fntmnu0c8hq",
-      /*center: [-73.98387980000001, 40.75704],*/
-      center: [-1.98387980000001, 30.75704],
-      zoom: 2,
-    });
-  });
-
   return (
     <>
       <Header />
-      {/* <ContactUs data={ACFcontact} /> */}
       <div className="xs:grid-cols-1 md:grid grid-cols-2 gap-4">
-        <div className="xs:w-full md:w-1/2">
+        <div className="xs:w-full">
           <Image
             src="https://kap-staging.us/wp-content/uploads/2020/05/HeroImages_secondarypage_contactus-2-1.jpg"
             width={750}
             height={600}
             layout="responsive"
-            objectFit="cover"
+            objectFit="contain"
             quality={100}
             placeholder="blur"
             blurDataURL={`data:image/svg+xml;base64,${toBase64(
@@ -71,9 +59,8 @@ export default function Contant() {
         </div>
         <div className="xs:w-full md:w-1/2">&nbsp;</div>
       </div>
-      <div id="kapitus-map" className="w-full" style={{ height: 500 }}></div>
-      {/* <section ref={observe}>{inView && <Footer />}</section> */}
-      <Footer />
+      {inView && <Map />}
+      <section ref={observe}>{inView && <Footer />}</section>
     </>
   );
 }
