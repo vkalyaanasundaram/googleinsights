@@ -1,12 +1,12 @@
-// import React, { useState, useEffect } from "react";
+import { useQuery, gql } from "@apollo/client";
+import Link from "next/link";
+import InfiniteScroll from "react-infinite-scroll-component";
+
+import { useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { useQuery, gql } from "@apollo/client";
-import Link from "next/link";
-// import InfiniteScroll from "react-infinite-scroll-component";
-
-import { useRouter } from "next/router";
 import ReactHtmlParser, { htmlparser2 } from "react-html-parser";
 import {
   BrowserView,
@@ -50,10 +50,6 @@ const GET_POSTS = gql`
           featuredImage {
             node {
               sourceUrl
-              mediaDetails {
-                width
-                height
-              }
             }
           }
           content
@@ -93,7 +89,6 @@ export default function InfiniteScrollList() {
   // const config = {
   //   unstable_runtimeJS: false,
   // };
-  alert(posts);
 
   const toBase64 = (str) =>
     typeof window === "undefined"
@@ -116,7 +111,13 @@ export default function InfiniteScrollList() {
 
   return (
     <>
-      <Header />
+      <div className="w-full ">
+        <Head>
+          <title>Blog - Kapitus</title>
+        </Head>
+        <Header />
+      </div>
+
       <div className="w-full">
         <div className="flex flex-col md:flex-row">
           <div className="xs:w-full md:w-3/4 border-2 border-gray-200 ">
@@ -180,13 +181,13 @@ export default function InfiniteScrollList() {
             </BrowserView>
             <div className="flex flex-col md:flex-row">
               <div className="xs:w-full md:w-full ">
-                {/* <InfiniteScroll
+                <InfiniteScroll
                   dataLength={posts.length}
                   next={fetchMorePosts}
                   hasMore={haveMorePosts}
                   loader={<p>Loading...</p>}
                   endMessage={<p>✅ All posts loaded.</p>}
-                > */}
+                >
                   <div className="xs:grid grid-col-1 w-full mt-10 md:grid grid-cols-3 gap-4 mt-10">
                     {posts?.map((key, index) => (
                       <div key={key}>
@@ -219,7 +220,7 @@ export default function InfiniteScrollList() {
                       </div>
                     ))}
                   </div>
-                {/* </InfiniteScroll> */}
+                </InfiniteScroll>
                 <div></div>
               </div>
             </div>
@@ -232,7 +233,9 @@ export default function InfiniteScrollList() {
           </div>
         </div>
       </div>
-      <Footer />
+      <div className="float-left clear-both">
+        <Footer />
+      </div>
     </>
   );
 }
