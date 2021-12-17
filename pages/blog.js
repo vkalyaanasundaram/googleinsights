@@ -1,12 +1,12 @@
-import { useQuery, gql } from "@apollo/client";
-import Link from "next/link";
-import InfiniteScroll from "react-infinite-scroll-component";
-
-import { useRouter } from "next/router";
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { useQuery, gql } from "@apollo/client";
+import Link from "next/link";
+// import InfiniteScroll from "react-infinite-scroll-component";
+
+import { useRouter } from "next/router";
 import ReactHtmlParser, { htmlparser2 } from "react-html-parser";
 import {
   BrowserView,
@@ -14,7 +14,6 @@ import {
   isBrowser,
   isMobile,
 } from "react-device-detect";
-import useInView from "react-cool-inview";
 
 import RecentBlogs from "../components/blog/recentBlogs";
 import AllBlogs from "../components/blog/allBlogs";
@@ -51,6 +50,10 @@ const GET_POSTS = gql`
           featuredImage {
             node {
               sourceUrl
+              mediaDetails {
+                width
+                height
+              }
             }
           }
           content
@@ -66,11 +69,6 @@ export default function InfiniteScrollList() {
   const { data, loading, error, fetchMore } = useQuery(GET_POSTS, {
     variables: { first: BATCH_SIZE, after: null },
     notifyOnNetworkStatusChange: true,
-  });
-
-  const { observe, inView } = useInView({
-    onEnter: ({ unobserve }) => unobserve(), // only run once
-    onLeave: ({ observe }) => observe(),
   });
 
   function fetchMorePosts() {
@@ -138,7 +136,7 @@ export default function InfiniteScrollList() {
                         key={index}
                         prefetch={false}
                       >
-                        <div className="text-left mx-10">
+                        <div className="w-full text-left px-10">
                           {key?.featuredImage?.node?.sourceUrl.length > 0 && (
                             <Image
                               src={key?.featuredImage?.node?.sourceUrl}
@@ -148,12 +146,15 @@ export default function InfiniteScrollList() {
                               blurDataURL={`data:image/svg+xml;base64,${toBase64(
                                 shimmer(700, 475)
                               )}`}
-                              width={1000}
-                              height={700}
-                              className="blogImgSize"
+                              width={
+                                key?.featuredImage?.node?.mediaDetails?.width
+                              }
+                              height={
+                                key?.featuredImage?.node?.mediaDetails?.height
+                              }
                             />
                           )}
-                          <div className="xs:text-center md:text-lg text-kapitus text-left ">
+                          <div className="xs:text-center md:text-lg text-kapitus text-left">
                             <Link
                               href={`/blog/${key.slug}`}
                               passHref
@@ -163,7 +164,7 @@ export default function InfiniteScrollList() {
                               <a> {ReactHtmlParser(key.title)}</a>
                             </Link>
                           </div>
-                          <div>
+                          <div className="">
                             {ReactHtmlParser(key.content.substring(0, 400))}...
                           </div>
                           <div className="py-5">
@@ -239,7 +240,9 @@ export default function InfiniteScrollList() {
           </div>
         </div>
       </div>
-      <div className="float-left clear-both">{inView && <Footer />}</div>
+      <div className="mt-10 w-full">
+        <Footer />
+      </div>
     </>
   );
 }
