@@ -118,11 +118,11 @@ export default function InfiniteScrollList() {
       <Head>
         <title>Blog - Kapitus</title>
       </Head>
-      {/* <div className="w-full ">
+      <div className="w-full ">
         <Header />
-      </div> */}
-      Blogs
-      {/* <div className="w-full">
+      </div>
+
+      <div className="w-full">
         <div className="flex flex-col md:flex-row">
           <div className="xs:w-full md:w-3/4 border-2 border-gray-200 ">
             <BrowserView>
@@ -188,13 +188,13 @@ export default function InfiniteScrollList() {
             </BrowserView>
             <div className="flex flex-col md:flex-row">
               <div className="xs:w-full md:w-full ">
-                <InfiniteScroll
+                {/* <InfiniteScroll
                   dataLength={posts.length}
                   next={fetchMorePosts}
                   hasMore={haveMorePosts}
                   loader={<p>Loading...</p>}
                   endMessage={<p>✅ All posts loaded.</p>}
-                >
+                > */}
                 <div className="xs:grid grid-col-1 w-full mt-10 md:grid grid-cols-3 gap-4 mt-10">
                   {posts?.map((key, index) => (
                     <div key={key}>
@@ -227,7 +227,7 @@ export default function InfiniteScrollList() {
                     </div>
                   ))}
                 </div>
-                </InfiniteScroll>
+                {/* </InfiniteScroll> */}
                 <div></div>
               </div>
             </div>
@@ -239,10 +239,10 @@ export default function InfiniteScrollList() {
             <BlogCategories />
           </div>
         </div>
-      </div> */}
-      {/* <div className="mt-10 w-full">
+      </div>
+      <div className="mt-10 w-full">
         <Footer />
-      </div> */}
+      </div>
     </>
   );
 }
