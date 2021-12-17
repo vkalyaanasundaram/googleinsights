@@ -121,7 +121,7 @@ export default function InfiniteScrollList() {
       {/* <div className="w-full ">
         <Header />
       </div> */}
-
+      Blogs
       {/* <div className="w-full">
         <div className="flex flex-col md:flex-row">
           <div className="xs:w-full md:w-3/4 border-2 border-gray-200 ">
