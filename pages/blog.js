@@ -115,9 +115,7 @@ export default function InfiniteScrollList() {
 
   return (
     <>
-      <Head>
-        <title>Blog - Kapitus</title>
-      </Head>
+      <Header />
       Blogs
     </>
   );
