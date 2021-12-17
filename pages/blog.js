@@ -117,6 +117,7 @@ export default function InfiniteScrollList() {
     <>
       <Header />
       Blogs
+      <Footer />
     </>
   );
 }
