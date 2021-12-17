@@ -14,6 +14,7 @@ import {
   isBrowser,
   isMobile,
 } from "react-device-detect";
+import useInView from "react-cool-inview";
 
 import RecentBlogs from "../components/blog/recentBlogs";
 import AllBlogs from "../components/blog/allBlogs";
@@ -65,6 +66,11 @@ export default function InfiniteScrollList() {
   const { data, loading, error, fetchMore } = useQuery(GET_POSTS, {
     variables: { first: BATCH_SIZE, after: null },
     notifyOnNetworkStatusChange: true,
+  });
+
+  const { observe, inView } = useInView({
+    onEnter: ({ unobserve }) => unobserve(), // only run once
+    onLeave: ({ observe }) => observe(),
   });
 
   function fetchMorePosts() {
@@ -233,9 +239,7 @@ export default function InfiniteScrollList() {
           </div>
         </div>
       </div>
-      <div className="float-left clear-both">
-        <Footer />
-      </div>
+      <div className="float-left clear-both">{inView && <Footer />}</div>
     </>
   );
 }
