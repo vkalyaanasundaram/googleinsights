@@ -115,17 +115,17 @@ export default function InfiniteScrollList() {
 
   return (
     <>
+      <Head>
+        <title>Blog - Kapitus</title>
+      </Head>
       <div className="w-full ">
-        <Head>
-          <title>Blog - Kapitus</title>
-        </Head>
         <Header />
       </div>
 
       <div className="w-full">
         <div className="flex flex-col md:flex-row">
           <div className="xs:w-full md:w-3/4 border-2 border-gray-200 ">
-            <BrowserView>
+            {/* <BrowserView>
               {posts?.map((key, index) => (
                 <>
                   {index === 0 ? (
@@ -185,7 +185,7 @@ export default function InfiniteScrollList() {
                   )}
                 </>
               ))}
-            </BrowserView>
+            </BrowserView> */}
             <div className="flex flex-col md:flex-row">
               <div className="xs:w-full md:w-full ">
                 {/* <InfiniteScroll
