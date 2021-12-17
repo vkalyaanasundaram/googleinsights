@@ -240,9 +240,9 @@ export default function InfiniteScrollList() {
           </div>
         </div>
       </div> */}
-      <div className="mt-10 w-full">
+      {/* <div className="mt-10 w-full">
         <Footer />
-      </div>
+      </div> */}
     </>
   );
 }
