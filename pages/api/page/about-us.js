@@ -3,8 +3,7 @@ export default async (req, resp) => {
     query: { slug },
   } = req;
 
-  const ABOUT_QRY = `
-    query AboutUs($id: ID!) {
+  const ABOUT_QRY = `query AboutUs($id: ID!) {
         page(idType: URI, id: $id) {
           aboutUs {
             aboutDescription
@@ -34,16 +33,15 @@ export default async (req, resp) => {
                 careerDetails
                 linkedin
             }
-            ourHistory {
-                noOfEmployees
-                fundedAmount
-                fieldGroupName
-                companyYear
-                businessFunded
-                companyData
-                svgIcon {
-                  sourceUrl
-                }
+            ourHistoryRow {
+              businessFunded
+              companyData
+              companyYear
+              fundedAmount
+              noOfEmployees
+              svgIcon {
+                sourceUrl
+              }
             }
           }
         }
