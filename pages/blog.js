@@ -118,9 +118,9 @@ export default function InfiniteScrollList() {
       <Head>
         <title>Blog - Kapitus</title>
       </Head>
-      <div className="w-full ">
+      {/* <div className="w-full ">
         <Header />
-      </div>
+      </div> */}
 
       {/* <div className="w-full">
         <div className="flex flex-col md:flex-row">
