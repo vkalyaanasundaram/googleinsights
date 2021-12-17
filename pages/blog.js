@@ -14,7 +14,6 @@ import {
   isBrowser,
   isMobile,
 } from "react-device-detect";
-import useInView from "react-cool-inview";
 
 import RecentBlogs from "../components/blog/recentBlogs";
 import AllBlogs from "../components/blog/allBlogs";
@@ -114,16 +113,11 @@ export default function InfiniteScrollList() {
     <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
   </svg>`;
 
-  const { observe, inView } = useInView({
-    onEnter: ({ unobserve }) => unobserve(), // only run once
-    onLeave: ({ observe }) => observe(),
-  });
-
   return (
     <>
       <Header />
       Blogs
-      {inView && <Footer />}
+      <Footer />
     </>
   );
 }
