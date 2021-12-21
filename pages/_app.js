@@ -35,6 +35,6 @@ export default function App({ Component, pageProps, statusCode }) {
   );
 }
 
-export function reportWebVitals(metric) {
-  console.log(metric);
-}
+// export function reportWebVitals(metric) {
+//   console.log(metric);
+// }
