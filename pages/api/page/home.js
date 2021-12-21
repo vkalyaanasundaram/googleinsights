@@ -14,15 +14,7 @@ export default async (req, resp) => {
   query HomePage {
          page(id: "index-2", idType: URI) {
           title
-          uri
           ThreeColumnStaticPage {
-            cards {
-              cardContent
-              cardTitle
-              svgIcon {
-                sourceUrl
-              }
-            }
             banner {
               bannerButton
               bannerDescription
