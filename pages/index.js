@@ -25,7 +25,7 @@ const Footer = dynamic(() => import("../components/Footer"), {
 
 export default function Home() {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  // const { data, error } = useSWR("/api/page/home", fetcher);
+  const { data, error } = useSWR("/api/page/home", fetcher);
 
   let { asPath, pathname } = useRouter();
   const router = useRouter();
@@ -53,10 +53,10 @@ export default function Home() {
     onEnter: ({ unobserve }) => unobserve(), // only run once
     onLeave: ({ observe }) => observe(),
   });
-  // if (error) return <div>failed to load</div>;
-  // if (!data) return <div>loading...</div>;
+  if (error) return <div>failed to load</div>;
+  if (!data) return <div>loading...</div>;
 
-  // const BannerData = data?.page?.ThreeColumnStaticPage?.banner;
+  const BannerData = data?.page?.ThreeColumnStaticPage?.banner;
 
   return (
     <>
