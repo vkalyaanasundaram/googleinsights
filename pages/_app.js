@@ -1,10 +1,10 @@
 import "tailwindcss/tailwind.css";
 import "../styles/globals.css";
-
+import { AnimateSharedLayout } from "framer-motion";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { relayStylePagination } from "@apollo/client/utilities";
 
-export default function App({ Component, pageProps, statusCode }) {
+export default function App({ Component, pageProps, statusCode, router }) {
   const cache = new InMemoryCache({
     typePolicies: {
       Query: {
@@ -24,8 +24,9 @@ export default function App({ Component, pageProps, statusCode }) {
     <>
       <ApolloProvider client={client}>
         {/* <Analytics /> */}
-
-        <Component {...pageProps} />
+      <AnimateSharedLayout>
+        <Component {...pageProps} key={router.route} />
+        </AnimateSharedLayout>
       </ApolloProvider>
     </>
   );

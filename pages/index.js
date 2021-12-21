@@ -9,6 +9,7 @@ import {
   heroDesktopImage,
   heroMobileImage,
 } from "../styles/Home.module.css";
+let localdata = ['gfproduct', 'gffund', 'gfindustry', 'gfmonth', 'gfyear', 'gfcheckbox', 'gfrevenue', 'gfrepayment', 'gfbusiness', 'gfloan', 'gflender', 'gfcreditscore', 'gfpersonalinfo']
 import useSWR from "swr";
 import { useRouter } from "next/router";
 import useInView from "react-cool-inview";
@@ -69,6 +70,14 @@ export default function Home() {
   if (!data) return <div>loading...</div>;
 
   const BannerData = data?.page?.ThreeColumnStaticPage?.banner;
+
+  const openForm = (event) => {
+    setTimeout(function(){
+    //setOpen(true)
+    //router.push(`${router.asPath}#get-started`)
+    router.push(`/get-started/${localStorage.getItem('formstep') || 1}`)
+    }, 700)
+  }
 
   return (
     <>
@@ -134,7 +143,7 @@ export default function Home() {
                     data?.page?.ThreeColumnStaticPage?.banner?.bannerDescription
                   )}
                 </div>
-                <div className="xs:text-xs sm:text-lg mt-5 md:text-2xl text-kapitus">
+                <div className="xs:text-xs sm:text-lg mt-5 md:text-2xl text-kapitus" onClick={openForm}>
                   {ReactHtmlParser(
                     data?.page?.ThreeColumnStaticPage?.banner?.bannerButton
                   )}

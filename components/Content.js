@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ReactHtmlParser from "react-html-parser";
 import Image from "next/image";
 

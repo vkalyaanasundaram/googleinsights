@@ -1,16 +1,20 @@
 import Head from "next/head";
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ReactHtmlParser, { htmlparser2 } from "react-html-parser";
+import { useRouter } from "next/router";
 import {
   bgWrap,
   bgText,
   heroDesktopImage,
   heroMobileImage,
 } from "../styles/Home.module.css";
+let localdata = ['gfproduct', 'gffund', 'gfindustry', 'gfmonth', 'gfyear', 'gfcheckbox', 'gfrevenue', 'gfrepayment', 'gfbusiness', 'gfloan', 'gflender', 'gfcreditscore', 'gfpersonalinfo']
 
 export default function Banner({ data }) {
+  console.log('hhj')
+  const router = useRouter();
   const toBase64 = (str) =>
     typeof window === "undefined"
       ? Buffer.from(str).toString("base64")
@@ -30,6 +34,14 @@ export default function Banner({ data }) {
     <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
   </svg>`;
 
+  useEffect(() => {
+    console.log('sdz')
+    if(!localStorage.getItem('reload')){
+      localdata.map((item, i) => localStorage.removeItem(item))
+      localStorage.removeItem('formstep')
+    }
+    localStorage.removeItem('reload')
+  }, [])
   return (
     <>
       <section className="relative">
@@ -80,7 +92,7 @@ export default function Banner({ data }) {
                 <div className="text-sm md:text-xl lg:text-2xl my-10">
                   {ReactHtmlParser(data?.bannerDescription)}
                 </div>
-                <div className="xs:text-xs sm:text-lg mt-5 md:text-2xl text-kapitus">
+                <div className="xs:text-xs sm:text-lg mt-5 md:text-2xl text-kapitus" onClick={openForm}>
                   {ReactHtmlParser(data?.bannerButton)}
                 </div>
               </div>

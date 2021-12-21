@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 html,
 body {
   padding: 0;
@@ -174,3 +177,124 @@ h4 {
   font-size: 29px;
   line-height: 45px;
 }
+
+/* individual product page */
+
+.content-tab {
+  grid-area: content;
+}
+.underline1 {
+  border-bottom: 2px solid #3f51b5;
+}
+.react-modal-sheet-container {
+  position: relative!important;
+  border-top-right-radius: 0!important;
+  border-top-left-radius: 0!important;
+  /*background-color: #003a5d!important;*/
+  min-height: 812px;
+}
+.htitle li {
+    color: rgb(121 189 101);
+    margin-left: 7px;
+    margin-right: 7px;
+    color: rgb(169, 64, 104);
+    /*line-height: 30px;*/
+    font-size: 0.775rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+/* individual product page */
+
+/*
+validation message style starts
+*/
+
+@media only screen and (max-width: 635px) {
+  .success {
+    position: absolute;
+    top: 9px;
+    right: -51px;
+    width: 70px;
+    height: 31px;
+    background: url('/images/check.png') center center no-repeat;
+    display: inline-block;
+    text-indent: -9999px;
+  }
+  .error {
+    position: absolute;
+    top: 9px;
+    right: -51px;
+    width: 70px;
+    height: 31px;
+    background: url('/images/cross.png') center center no-repeat;
+    display: inline-block;
+    text-indent: -9999px;
+  }
+}
+/*
+validation message style ends
+*/
+
+/* Accordion for get started form starts */
+.accordion__section {
+  display: flex;
+  flex-direction: column;
+}
+.accordion {
+  background-color: rgb(239, 239, 239);
+  color: #f4c4;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  transition: background-color 0.6s ease;
+}
+
+.accordion:hover,
+.active1 {
+  background-color: rgb(239, 239, 239);
+}
+.accordion__title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  line-height: 25px;
+  width: 80%;
+  font-size: 15px;
+  color: #003a5d;
+}
+.accordion__icon {
+  margin-left: auto;
+  transition: transform 0.6s ease;
+}
+.rotate {
+  transform: rotate(90deg);
+}
+.accordion__content {
+  color: #66899e;
+  flex: 1 1 auto;
+  background-color: white;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+  font-size: 1rem;
+  font-weight: 400;
+  max-height: 0;
+}
+.accordion__text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px;
+}
+.accordion__text div {
+  font-size: 1rem;
+  color: #66899e;
+}
+/* Accordion for get started form ends */
+
+/* Signature Refresh Starts */
+.refresh div {
+  float: right;
+}
+/* Signature Refresh Ends */
