@@ -61,7 +61,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      {/* <section className="relative">
+      <section className="relative">
         <div className="opacity-40">
           <div className={heroDesktopImage}>
             {data?.page?.ThreeColumnStaticPage?.banner?.bannerImage?.sourceUrl
@@ -133,7 +133,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
       {/* <section className="container" ref={observe}>
         {inView && (
           <script
