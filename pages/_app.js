@@ -1,14 +1,8 @@
 import "tailwindcss/tailwind.css";
 import "../styles/globals.css";
-import Head from "next/head";
 
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { relayStylePagination } from "@apollo/client/utilities";
-
-const client = new ApolloClient({
-  uri: process.env.WORDPRESS_GRAPHQL_ENDPOINT,
-  cache: new InMemoryCache(),
-});
 
 export default function App({ Component, pageProps, statusCode }) {
   const cache = new InMemoryCache({
@@ -27,11 +21,13 @@ export default function App({ Component, pageProps, statusCode }) {
   });
 
   return (
-    <ApolloProvider client={client}>
-      {/* <Analytics /> */}
+    <>
+      <ApolloProvider client={client}>
+        {/* <Analytics /> */}
 
-      <Component {...pageProps} />
-    </ApolloProvider>
+        <Component {...pageProps} />
+      </ApolloProvider>
+    </>
   );
 }
 
