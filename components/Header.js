@@ -2,14 +2,14 @@ import useSWR from "swr";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  FaFacebookSquare,
-  FaLinkedin,
-  FaInstagram,
-  FaTwitterSquare,
-  FaYoutube,
-} from "react-icons/fa";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   FaFacebookSquare,
+//   FaLinkedin,
+//   FaInstagram,
+//   FaTwitterSquare,
+//   FaYoutube,
+// } from "react-icons/fa";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="xs:hidden md:block border-2 border-white w-full bg-kapitus px-5 py-2 float-left ">
+      {/* <div className="xs:hidden md:block border-2 border-white w-full bg-kapitus px-5 py-2 float-left ">
         <div className="container">
           <div className="float-left w-9/12">
             <Link href="https://www.facebook.com/KapitusFinance/">
@@ -66,7 +66,7 @@ const Header = () => {
             Login | Call now: (800) 780-7133
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="bg-kapitus border-2 border-white px-5">
         <nav className="container flex items-center justify-between flex-wrap">
           <div className="flex items-center flex-shrink-0 text-white mr-6">
