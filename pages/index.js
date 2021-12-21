@@ -72,7 +72,7 @@ export default function Home() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <section className="relative">
         <div className="opacity-40">
           <div className={heroDesktopImage}>
