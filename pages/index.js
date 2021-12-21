@@ -61,10 +61,6 @@ export default function Home() {
     <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
   </svg>`;
 
-  const { observe, inView } = useInView({
-    onEnter: ({ unobserve }) => unobserve(), // only run once
-    onLeave: ({ observe }) => observe(),
-  });
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
 
@@ -72,7 +68,7 @@ export default function Home() {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <section className="relative">
         <div className="opacity-40">
           <div className={heroDesktopImage}>
@@ -147,23 +143,82 @@ export default function Home() {
         </div>
       </section>
       {/* <Banner data={BannerData} /> */}
-      <section className="container" ref={observe}>
-        {inView && (
-          <script
-            defer
-            src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
-          ></script>
-        )}
+      <section className="container">
+        <script
+          defer
+          src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
+        ></script>
       </section>
-      <section ref={observe}>
-        <div className="xs:w-full">
+      <section>
+        {/* <div className="xs:w-full">
           {inView && (
             <Content data={data?.page?.ThreeColumnStaticPage?.cards} />
           )}
+        </div> */}
+        <div className="container">
+          <section className="grid gap-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3">
+            <div className="shadow-md rounded-md overflow-hidden dark:bg-red-100 dark:text-black">
+              <div className="grid place-items-center w-full text-right">
+                <Image
+                  src="/The-Kapitus-Difference.svg"
+                  width="100"
+                  height="100"
+                  alt=""
+                  objectFit="cover"
+                  quality={100}
+                  placeholder="blur"
+                  blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                    shimmer(700, 475)
+                  )}`}
+                />
+              </div>
+              <h4 className="font-semibold text-center my-10 uppercase text-kapitus">
+                THE KAPITUS DIFFERENCE
+              </h4>
+            </div>
+            <div className="shadow-md rounded-md overflow-hidden dark:bg-red-100 dark:text-black">
+              <div className="grid place-items-center w-full text-right">
+                <Image
+                  src="/Success-On-Every-Corner.svg"
+                  width="100"
+                  height="100"
+                  alt=""
+                  objectFit="cover"
+                  quality={100}
+                  placeholder="blur"
+                  blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                    shimmer(700, 475)
+                  )}`}
+                />
+              </div>
+              <h4 className="font-semibold text-center my-10 uppercase text-kapitus">
+                THE KAPITUS DIFFERENCE
+              </h4>
+            </div>
+            <div className="shadow-md rounded-md overflow-hidden dark:bg-red-100 dark:text-black">
+              <div className="grid place-items-center w-full text-right">
+                <Image
+                  src="/Lets-Grow-Together.svg"
+                  width="100"
+                  height="100"
+                  alt=""
+                  objectFit="cover"
+                  quality={100}
+                  placeholder="blur"
+                  blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                    shimmer(700, 475)
+                  )}`}
+                />
+              </div>
+              <h4 className="font-semibold text-center my-10 uppercase text-kapitus">
+                LETS GROW TOGETHER
+              </h4>
+            </div>
+          </section>
         </div>
       </section>
 
-      <section>{inView && <Footer />}</section>
+      <section><Footer /></section>
       <Head>
         <script
           defer
