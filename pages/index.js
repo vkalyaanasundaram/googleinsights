@@ -61,6 +61,10 @@ export default function Home() {
     <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
   </svg>`;
 
+  const { observe, inView } = useInView({
+    onEnter: ({ unobserve }) => unobserve(), // only run once
+    onLeave: ({ observe }) => observe(),
+  });
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
 
@@ -143,13 +147,15 @@ export default function Home() {
         </div>
       </section>
       {/* <Banner data={BannerData} /> */}
-      <section className="container">
-        <script
-          defer
-          src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
-        ></script>
+      <section className="container" ref={observe}>
+        {inView && (
+          <script
+            defer
+            src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
+          ></script>
+        )}
       </section>
-      <section>
+      <section ref={observe}>
         {/* <div className="xs:w-full">
           {inView && (
             <Content data={data?.page?.ThreeColumnStaticPage?.cards} />
@@ -218,7 +224,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section><Footer /></section>
+      <section>{inView && <Footer />}</section>
       <Head>
         <script
           defer
