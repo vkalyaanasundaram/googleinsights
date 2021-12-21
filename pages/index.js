@@ -134,21 +134,21 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* <section className="container" ref={observe}>
+      <section className="container" ref={observe}>
         {inView && (
           <script
             defer
             src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
           ></script>
         )}
-      </section> */}
+      </section>
       <section ref={observe}>
         {/* <div className="xs:w-full">
           {inView && (
             <Content data={data?.page?.ThreeColumnStaticPage?.cards} />
           )}
         </div> */}
-        <div className="container" ref={observe}>
+        <div className="container my-10" ref={observe}>
           {inView && (
             <section className="grid gap-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3">
               <div className="shadow-md rounded-md overflow-hidden dark:bg-red-100 dark:text-black">
@@ -214,12 +214,6 @@ export default function Home() {
       </section>
 
       <section>{inView && <Footer />}</section>
-      <Head>
-        <script
-          defer
-          src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
-        ></script>
-      </Head>
     </>
   );
 }
