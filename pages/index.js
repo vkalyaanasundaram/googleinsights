@@ -14,19 +14,7 @@ import { useRouter } from "next/router";
 import useInView from "react-cool-inview";
 
 import Header from "../components/Header";
-const Banner = dynamic(() => import("../components/Banner"), {
-  loading: function ld() {
-    return <p>Loading...</p>;
-  },
-  ssr: false,
-});
-
-const Content = dynamic(() => import("../components/Content"), {
-  loading: function ld() {
-    return <p>Loading...</p>;
-  },
-  ssr: false,
-});
+import Banner from "../components/Banner";
 
 const Footer = dynamic(() => import("../components/Footer"), {
   loading: function ld() {
