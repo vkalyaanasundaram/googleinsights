@@ -41,7 +41,7 @@ export default function Banner({ data }) {
                 width={data?.bannerImage?.mediaDetails?.width}
                 // height={data?.bannerImage?.mediaDetails?.height}
                 height={550}
-                layout="responsive"
+                layout="intrinsic"
                 objectFit="cover"
                 quality={100}
                 placeholder="blur"
