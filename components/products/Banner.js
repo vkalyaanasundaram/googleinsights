@@ -69,7 +69,7 @@ export default function ProductsBanner({ data }) {
                 width={500}
                 // height={data?.mobileBannerImage?.mediaDetails?.height}
                 height={850}
-                layout="responsive"
+                layout="intrinsic"
                 objectFit="cover"
                 quality={100}
                 placeholder="blur"
