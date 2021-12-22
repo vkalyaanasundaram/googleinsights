@@ -98,7 +98,7 @@ export default function Home() {
                 }
                 width={500}
                 height={450}
-                layout="responsive"
+                layout="intrinsic"
                 objectFit="cover"
                 quality={100}
                 placeholder="blur"
