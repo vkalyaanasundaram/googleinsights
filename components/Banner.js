@@ -58,7 +58,7 @@ export default function Banner({ data }) {
                 src={data?.mobileBannerImage?.sourceUrl}
                 width={500}
                 height={750}
-                layout="responsive"
+                layout="intrinsic"
                 objectFit="cover"
                 quality={100}
                 placeholder="blur"
