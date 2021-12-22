@@ -16,12 +16,9 @@ export default function ProductsContainer({ data }) {
       <div className="w-full p-10">
         <div className="container mx-auto">
           <div>{ReactHtmlParser(data?.ourGoal)}</div>
-          <section className="container min-h-full grid gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3">
+          <section className="grid gap-6 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3">
             {data?.productsCards?.map((value, key) => (
-              <div
-                className="relative shadow-md rounded-md overflow-hidden dark:bg-red-100"
-                key={key}
-              >
+              <div className="relative border-2 my-5 dark:bg-red-100" key={key}>
                 <div className="grid place-items-center w-full text-right my-5">
                   <Image
                     src={value?.svgIcon?.sourceUrl}
@@ -30,15 +27,15 @@ export default function ProductsContainer({ data }) {
                     alt=""
                   />
                 </div>
-                <h5 className="text-4xl font-normal text-kapitus mt-4 mb-4 text-center mx-8 uppercase">
+                <h3 className="xs:text-xs mx-3 md:font-normal text-kapitus mt-4 mb-4 text-center mx-8 uppercase">
                   {value?.cardTitle}
-                </h5>
-                <p className="text-center text-lg px-5 text-kapitus min-h-screen productContent">
+                </h3>
+                <div className="xs:mobileContent md:text-center text-lg px-5 text-kapitus productContent">
                   {ReactHtmlParser(value?.cardContent)}
-                </p>
-                <div className="top-3/4 absolute py-5 w-full text-center place-items-center ">
+                </div>
+                <div className="absolute bottom-1 py-5 w-full text-center place-items-center ">
                   <button
-                    className="shadow-md p-5 bg-blue-900"
+                    className="shadow-md p-5 py-3 bg-blue-900 text-sm"
                     onClick={(e) => {
                       cardPage(value?.cardSlug);
                     }}
