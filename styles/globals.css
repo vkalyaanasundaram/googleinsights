@@ -52,8 +52,11 @@ body {
   margin-top: 25px;
 }
 .productContent {
-  min-height: 85vh !important;
+  min-height: 80vh !important;
   height: 100% !important;
+}
+.mobileContent {
+  min-height: 105vh !important;
 }
 .formBtn button {
   padding: 0px 20px;

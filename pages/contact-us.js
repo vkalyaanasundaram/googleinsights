@@ -47,7 +47,7 @@ export default function Contant() {
             src="https://kap-staging.us/wp-content/uploads/2020/05/HeroImages_secondarypage_contactus-2-1.jpg"
             width={750}
             height={600}
-            layout="responsive"
+            layout="intrinsic"
             objectFit="contain"
             quality={100}
             placeholder="blur"
