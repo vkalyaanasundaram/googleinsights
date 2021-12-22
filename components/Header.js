@@ -21,9 +21,9 @@ const Header = () => {
 
   return (
     <>
-      <div className="xs:hidden md:block border-2 border-white w-full bg-kapitus px-5 py-2 float-left ">
+      <div className="md:block border-2 border-white w-full bg-kapitus px-2 py-2 float-left ">
         <div className="container">
-          <div className="float-left w-9/12">
+          <div className="xs:w-1/2  md:w-9/12">
             <Link href="https://www.facebook.com/KapitusFinance/">
               <a target="_blank" rel="noreferrer">
                 <FaFacebookSquare
@@ -62,7 +62,7 @@ const Header = () => {
               </a>
             </Link>
           </div>
-          <div className="xs: text-sm md:float-left w-3/12 text-right text-white text-xs">
+          <div className="xs:w-1/2 text-xs md:w-3/12 text-right text-white text-xs float-right">
             Login | Call now: (800) 780-7133
           </div>
         </div>
