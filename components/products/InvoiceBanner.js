@@ -55,7 +55,7 @@ export default function IndividualBanner({ data }) {
                 <Image
                   alt=""
                   src={MobileBannerImage}
-                  layout="responsive"
+                  layout="intrinsic"
                   objectFit="cover"
                   width={data?.invoiceMobileBanner?.mediaDetails?.width}
                   height={1100}
