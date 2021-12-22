@@ -138,6 +138,7 @@ export default function Home() {
         {inView && (
           <script
             defer
+            lazyOnload
             src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
           ></script>
         )}
@@ -214,6 +215,13 @@ export default function Home() {
       </section>
 
       <section>{inView && <Footer />}</section>
+      <Head>
+        <script
+          defer
+          lazyOnload
+          src="https://cdn.trustindex.io/loader.js?09a5ee4135268498715860a5eb"
+        ></script>
+      </Head>
     </>
   );
 }
