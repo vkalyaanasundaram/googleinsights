@@ -77,7 +77,7 @@ export default function Home() {
                 }
                 // height={data?.bannerImage?.mediaDetails?.height}
                 height={350}
-                layout="responsive"
+                layout="intrinsic"
                 objectFit="cover"
                 quality={100}
                 placeholder="blur"
