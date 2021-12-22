@@ -3,6 +3,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig = {
   async headers() {
@@ -36,6 +37,7 @@ const nextConfig = {
   },
 };
 module.exports = {
+  assetPrefix: isProd ? "https://cdn.trustindex.io/" : "",
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     if (ANALYZE) {
       config.plugins.push(
