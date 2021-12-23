@@ -146,6 +146,7 @@ export default function InfiniteScrollList() {
                               height={700}
                               className="blogImgSize"
                               layout="intrinsic"
+                              objectFit="cover"
                             />
                           )}
                           <div className="xs:text-center md:text-lg text-kapitus text-left ">
