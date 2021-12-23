@@ -139,10 +139,10 @@ export default function ProductPage() {
           <div className="container">
             <FAQ />
           </div>
-          <div className="container my-10">
+          <section className="container my-10">
             <ProductsBlogs data={data} />
-          </div>
-          <div className="w-full">{inView && <Footer />}</div>
+          </section>
+          <section className="w-full">{inView && <Footer />}</section>
         </div>
       </>
     );
