@@ -184,47 +184,47 @@ export default function InfiniteScrollList() {
             </BrowserView>
             <div className="flex flex-col md:flex-row">
               <div className="xs:w-full md:w-full ">
-                {/* <InfiniteScroll
+                <InfiniteScroll
                   dataLength={posts.length}
                   next={fetchMorePosts}
                   hasMore={haveMorePosts}
                   loader={<p>Loading...</p>}
                   endMessage={<p>✅ All posts loaded.</p>}
-                > */}
-                <div className="xs:grid grid-col-1 w-full mt-10 md:grid grid-cols-3 gap-4 mt-10">
-                  {posts?.map((key, index) => (
-                    <div key={key}>
-                      <Link
-                        href={`/blog/${key.slug}`}
-                        passHref
-                        key={index}
-                        prefetch={false}
-                      >
-                        <div className="text-center">
-                          {key?.featuredImage?.node?.sourceUrl.length > 0 && (
-                            <Image
-                              src={key?.featuredImage?.node?.sourceUrl}
-                              width={250}
-                              height={150}
-                              alt="Blogs Image"
-                              objectFit="cover"
-                              layout="intrinsic"
-                              quality={100}
-                              placeholder="blur"
-                              blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                                shimmer(700, 475)
-                              )}`}
-                            />
-                          )}
-                          <div className="xs:text-center mx-10 md:text-lg text-blue-900 text-left ">
-                            {ReactHtmlParser(key.title)}...
+                >
+                  <div className="xs:grid grid-col-1 w-full mt-10 md:grid grid-cols-3 gap-4 mt-10">
+                    {posts?.map((key, index) => (
+                      <div key={key}>
+                        <Link
+                          href={`/blog/${key.slug}`}
+                          passHref
+                          key={index}
+                          prefetch={false}
+                        >
+                          <div className="text-center">
+                            {key?.featuredImage?.node?.sourceUrl.length > 0 && (
+                              <Image
+                                src={key?.featuredImage?.node?.sourceUrl}
+                                width={250}
+                                height={150}
+                                alt="Blogs Image"
+                                objectFit="cover"
+                                layout="intrinsic"
+                                quality={100}
+                                placeholder="blur"
+                                blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                                  shimmer(700, 475)
+                                )}`}
+                              />
+                            )}
+                            <div className="xs:text-center mx-10 md:text-lg text-blue-900 text-left ">
+                              {ReactHtmlParser(key.title)}...
+                            </div>
                           </div>
-                        </div>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-                {/* </InfiniteScroll> */}
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                </InfiniteScroll>
                 <div></div>
               </div>
             </div>
