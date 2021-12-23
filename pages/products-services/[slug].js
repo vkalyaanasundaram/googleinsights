@@ -119,30 +119,32 @@ export default function ProductPage() {
             <ProductBanner data={IndividualBanner} />
           </div>
 
-          <div className="w-full" ref={observe}>
+          <div className="xs:w-full" ref={observe}>
             <Content content={ProductContent} desc={ProductDescription} />
           </div>
-          <div className="w-full ">
-            <Requirements data={RequirementsData} />
-          </div>
-          <div className="w-full ">
-            <How data={HowToApply} />
-          </div>
-          <div className="w-full ">
-            <Who data={WhoShould} />
+          <div className="container">
+            <div className="xs:w-full md:w-11/12 ">
+              <Requirements data={RequirementsData} />
+            </div>
+            <div className="xs:w-full md:w-11/12 ">
+              <How data={HowToApply} />
+            </div>
+            <div className="xs:w-full md:w-11/12 ">
+              <Who data={WhoShould} />
+            </div>
           </div>
           <div className="w-full">
             <GroupColumn />
           </div>
-          <div className="flex">
-            <div className="w-full">
+          <div className="w-full">
+            <div className="flex xs:m-20 md:ml-20">
               <FAQ />
             </div>
           </div>
 
-            <div className="flex">
-              <ProductsBlogs data={data} />
-            </div>
+          <div className="flex">
+            <ProductsBlogs data={data} />
+          </div>
           <div className="w-full">{inView && <Footer />}</div>
         </div>
       </>
