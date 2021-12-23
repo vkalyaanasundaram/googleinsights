@@ -288,7 +288,7 @@ export default function AboutUs() {
           </div>
         ))}
         </div>*/}
-      <div id="Teams">
+      <div className="xs:w-full container px-5 mt-10 mb-10 mx-auto" id="Teams">
         <SimpleReactLightbox>
           <SRLWrapper options={options}>
             {data?.aboutUs?.meetTeam.map((value, key) => (
@@ -308,7 +308,9 @@ export default function AboutUs() {
         </SimpleReactLightbox>
       </div>
 
-      <section>{ReactHtmlParser(data?.aboutUs?.footeContent)}</section>
+      <section className="xs:w-full container px-5 mt-10 mb-10 mx-auto">
+        {ReactHtmlParser(data?.aboutUs?.footeContent)}
+      </section>
       <section>
         <Footer />
       </section>
