@@ -136,12 +136,13 @@ export default function ProductPage() {
           <div className="w-full">
             <GroupColumn />
           </div>
-          <div className="w-full">
-            <div className="flex xs:m-20 md:ml-20">
-              <FAQ />
+          <div className="container">
+            <div className="w-full">
+              <div className="flex">
+                <FAQ />
+              </div>
             </div>
           </div>
-
           <div className="flex">
             <ProductsBlogs data={data} />
           </div>
