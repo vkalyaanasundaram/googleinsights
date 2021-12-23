@@ -201,7 +201,7 @@ export default function InfiniteScrollList() {
                         prefetch={false}
                       >
                         <div className="text-center">
-                          {/* {key?.featuredImage?.node?.sourceUrl.length > 0 && (
+                          {key?.featuredImage?.node?.sourceUrl.length > 0 && (
                             <Image
                               src={key?.featuredImage?.node?.sourceUrl}
                               width={250}
@@ -215,7 +215,7 @@ export default function InfiniteScrollList() {
                                 shimmer(700, 475)
                               )}`}
                             />
-                          )} */}
+                          )}
                           <div className="xs:text-center mx-10 md:text-lg text-blue-900 text-left ">
                             {ReactHtmlParser(key.title)}...
                           </div>
