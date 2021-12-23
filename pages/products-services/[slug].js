@@ -137,13 +137,9 @@ export default function ProductPage() {
             <GroupColumn />
           </div>
           <div className="container">
-            <div className="w-full">
-              <div className="flex">
-                <FAQ />
-              </div>
-            </div>
+            <FAQ />
           </div>
-          <div className="flex">
+          <div className="container my-10">
             <ProductsBlogs data={data} />
           </div>
           <div className="w-full">{inView && <Footer />}</div>
