@@ -80,6 +80,8 @@ const Header = () => {
                     alt="Kapitus"
                     layout="intrinsic"
                     className="cursor-pointer"
+                    objectFit="fill"
+                    alt="Kapitus"
                   />
                 </a>
               </Link>
