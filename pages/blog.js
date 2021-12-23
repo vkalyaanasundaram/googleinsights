@@ -145,6 +145,7 @@ export default function InfiniteScrollList() {
                               width={1000}
                               height={700}
                               className="blogImgSize"
+                              layout="intrinsic"
                             />
                           )}
                           <div className="xs:text-center md:text-lg text-kapitus text-left ">
@@ -205,6 +206,7 @@ export default function InfiniteScrollList() {
                               height={150}
                               alt="Blogs Image"
                               objectFit="cover"
+                              layout="intrinsic"
                               quality={100}
                               placeholder="blur"
                               blurDataURL={`data:image/svg+xml;base64,${toBase64(
