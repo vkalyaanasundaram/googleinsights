@@ -79,7 +79,6 @@ const Header = () => {
                     height={85}
                     layout="intrinsic"
                     className="cursor-pointer"
-                    objectFit="fill"
                     alt="Kapitus"
                   />
                 </a>
