@@ -10,7 +10,6 @@
     "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
-    
     "@next/bundle-analyzer": "^11.1.2",
     "@svgr/webpack": "^5.5.0",
     "@zeit/next-css": "^1.0.1",
@@ -50,12 +49,12 @@
     "mapbox-gl": "^2.5.1",
     "postcss": "^8.1.10",
     "react-accessible-accordion": "^4.0.0",
-    "react-infinite-scroll-component": "^6.1.0",
     "react-dom": "^17.0.1",
-    "react-icons": "^4.3.1",
     "react-flippy": "^1.1.0",
-    "react-html-parser": "^2.0.2",
     "react-hook-form": "^7.20.2",
+    "react-html-parser": "^2.0.2",
+    "react-icons": "^4.3.1",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-sticky-header": "^0.2.0",
     "react-ui-scrollspy": "^2.1.0",
     "simple-react-lightbox": "^3.6.9-0",
