@@ -24,8 +24,8 @@ export default function ProductsBlogs({ data }) {
                   <p className="text-kapitus text-lg">{value.description}</p>
                 </div>
               ) : (
-                <div className="contaner">
-                  <div className="w-full">
+                <section>
+                  <div className="flex">
                     <div className="xs:w-full md:w-3/12 blogImg">
                       <div>
                         <Image
@@ -52,7 +52,7 @@ export default function ProductsBlogs({ data }) {
                       </div>
                     </div>
                   </div>
-                </div>
+                </section>
               )}
             </>
           </div>

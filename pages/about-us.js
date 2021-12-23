@@ -8,9 +8,9 @@ import useSWR from "swr";
 import useInView from "react-cool-inview";
 import dynamic from "next/dynamic";
 import ReactHtmlParser from "react-html-parser";
-import ScrollSpy from "react-ui-scrollspy";
+//import ScrollSpy from "react-ui-scrollspy";
 import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
-import React, { useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -26,10 +26,12 @@ const Footer = dynamic(() => import("../components/Footer"), {
   },
   ssr: false,
 });
+
 export default function AboutUs() {
   const { asPath, pathname } = useRouter();
   const elementRef = React.createRef();
   const [showHistory, setShowHistory] = useState(false);
+  const fixed = useRef();
   // const [showEmp, setShowEmp] = useState(false);
 
   const { data, error } = useSWR(`/api/page/${asPath}`, fetcher);
@@ -69,19 +71,65 @@ export default function AboutUs() {
   };
 
   useEffect(() => {
-    // const handleScroll = () => {
-    //   setScrollY(window.scrollY);
-    //   if (window.scrollY > 650) {
-    //     setShowHistory(true);
-    //   }
-    //   if (window.scrollY > 1500) {
-    //     setShowHistory(false);
-    //   }
-    //   window.addEventListener("scroll", () => {
-    //     setScrollY(window.scrollY > 650);
-    //   });
-    // };
-  }, []);
+    const handleScrollPos = () => {
+      if (window.scrollY <= 795) {
+        fixed.current.style.position = "relative";
+        fixed.current.style.top = "55px";
+      } else if (window.scrollY > 795 && window.scrollY < 2250) {
+        fixed.current.style.position = "fixed";
+        fixed.current.style.top = "165px";
+      } else {
+        fixed.current.style.position = "absolute";
+        fixed.current.style.top = "1489px";
+      }
+
+      var current;
+      let section = [
+        "section_1",
+        "section_2",
+        "section_3",
+        "section_4",
+        "section_5",
+        "section_6",
+        "section_7",
+        "section_8",
+      ];
+      section.map((item) => {
+        if (document.getElementById(item).offsetTop + 700 <= window.scrollY) {
+          current = item;
+        }
+      });
+
+      let fixedsection = [
+        "section-1",
+        "section-2",
+        "section-3",
+        "section-4",
+        "section-5",
+        "section-6",
+        "section-7",
+        "section-8",
+      ];
+      if (current) {
+        let actele = current.replace("_", "-");
+
+        fixedsection.map((item, i) => {
+          if (item == actele) {
+            let element = document.getElementById(item).classList;
+            element.add("active");
+            element.remove("inactive");
+          } else {
+            let element = document.getElementById(item).classList;
+            element.remove("active");
+            element.add("inactive");
+          }
+        });
+      }
+    };
+    window.addEventListener("scroll", handleScrollPos);
+
+    return () => window.removeEventListener("scroll", handleScrollPos);
+  }, [fixed]);
 
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
@@ -142,7 +190,61 @@ export default function AboutUs() {
           <div className="fixed-center">Scroll position: {scrollY}px</div>
         </div>
       </div> */}
-      <div className="relative">
+
+      <div className="md:flex mx-2 mb-8 relative">
+        <div className="w-1/3 px-2">
+          <div ref={fixed} className="bg-grey-light">
+            {data?.aboutUs?.ourHistoryRow.map((value, key) => (
+              <div
+                key={key}
+                className={`ml-10 employeeContent ${
+                  key == 0 ? `active` : `inactive`
+                }`}
+                id={`section-${key + 1}`}
+              >
+                <div className="leftContent active-scroll-spy p-5 w-64">
+                  <div className="text-kapitus py-3">
+                    {value?.noOfEmployees}
+                  </div>
+                  <hr />
+                  <div className="text-kapitus py-3">{value?.fundedAmount}</div>
+                  <hr />
+                  <div className="text-kapitus py-3">
+                    {value?.businessFunded}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="w-2/3 px-2">
+          <div className="bg-grey">
+            {data?.aboutUs?.ourHistoryRow.map((value, key) => (
+              <div
+                key={key}
+                id={`section_${key + 1}`}
+                className="md:pt-16 md:pb-8 businessContent flex w-full items-center"
+              >
+                <div className="text-right w-1/3 pr-20 text-kapitus text-3xl">
+                  {value?.companyYear}
+                </div>
+                <div className="float-left w-1/5">
+                  <Image
+                    src={value?.svgIcon?.sourceUrl}
+                    width="80"
+                    alt=""
+                    height="100"
+                  />
+                </div>
+                <div className="text-left w-1/2 text-kapitus text-2xl pr-4">
+                  {value?.companyData}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      {/*<div className="relative">
         {data?.aboutUs?.ourHistoryRow.map((value, key) => (
           <div key={key}>
             <div className="flex my-20">
@@ -176,7 +278,7 @@ export default function AboutUs() {
                       height="100"
                     />
                   </div>
-                  <div className="float-left  ml-10 text-kapitus text-2xl">
+                  <div className="float-left ml-10 text-kapitus text-2xl">
                     {value?.companyData}
                   </div>
                 </div>
@@ -185,8 +287,7 @@ export default function AboutUs() {
             <hr />
           </div>
         ))}
-      </div>
-
+        </div>*/}
       <div id="Teams">
         <SimpleReactLightbox>
           <SRLWrapper options={options}>
@@ -207,12 +308,10 @@ export default function AboutUs() {
         </SimpleReactLightbox>
       </div>
 
-      <div className="float-left clear-both xs:w-full p-10 mt-10 mb-10 mx-auto">
-        {ReactHtmlParser(data?.aboutUs?.footeContent)}
-      </div>
-      <div className="float-left clear-both ">
+      <section>{ReactHtmlParser(data?.aboutUs?.footeContent)}</section>
+      <section>
         <Footer />
-      </div>
+      </section>
     </>
   );
 }
