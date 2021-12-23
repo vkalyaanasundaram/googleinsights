@@ -34,7 +34,7 @@ const FAQ = () => {
   //   console.log(faq)
   return (
     <>
-      <div className="w-9/12">
+      <div className="container p-10">
         <h3>FAQs</h3>
         {faq?.map((value, key) => (
           // console.log(data);
