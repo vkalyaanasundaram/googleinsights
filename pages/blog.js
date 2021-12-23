@@ -125,58 +125,56 @@ export default function InfiniteScrollList() {
               {posts?.map((key, index) => (
                 <>
                   {index === 0 ? (
-                    <div>Large Image</div>
+                    <div className="w-full">
+                      <Link
+                        href={`/blog/${key.slug}`}
+                        passHref
+                        key={index}
+                        prefetch={false}
+                      >
+                        <div className="text-left mx-10">
+                          {key?.featuredImage?.node?.sourceUrl.length > 0 && (
+                            <Image
+                              src={key?.featuredImage?.node?.sourceUrl}
+                              alt="Blogs Image"
+                              quality={100}
+                              placeholder="blur"
+                              blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                                shimmer(700, 475)
+                              )}`}
+                              width={1000}
+                              height={700}
+                              className="blogImgSize"
+                              layout="intrinsic"
+                            />
+                          )}
+                          <div className="xs:text-center md:text-lg text-kapitus text-left ">
+                            <Link
+                              href={`/blog/${key.slug}`}
+                              passHref
+                              key={index}
+                              prefetch={false}
+                            >
+                              <a> {ReactHtmlParser(key.title)}</a>
+                            </Link>
+                          </div>
+                          <div>
+                            {ReactHtmlParser(key.content.substring(0, 400))}...
+                          </div>
+                          <div className="py-5">
+                            <Link
+                              href={`/blog/${key.slug}`}
+                              passHref
+                              key={index}
+                              prefetch={false}
+                            >
+                              Read More
+                            </Link>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
                   ) : (
-                    // <div className="w-full">
-                    //   <Link
-                    //     href={`/blog/${key.slug}`}
-                    //     passHref
-                    //     key={index}
-                    //     prefetch={false}
-                    //   >
-                    //     <div className="text-left mx-10">
-                    //       {key?.featuredImage?.node?.sourceUrl.length > 0 && (
-                    //         <Image
-                    //           src={key?.featuredImage?.node?.sourceUrl}
-                    //           alt="Blogs Image"
-                    //           quality={100}
-                    //           placeholder="blur"
-                    //           blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                    //             shimmer(700, 475)
-                    //           )}`}
-                    //           width={1000}
-                    //           height={700}
-                    //           className="blogImgSize"
-                    //           layout="intrinsic"
-                    //           objectFit="cover"
-                    //         />
-                    //       )}
-                    //       <div className="xs:text-center md:text-lg text-kapitus text-left ">
-                    //         <Link
-                    //           href={`/blog/${key.slug}`}
-                    //           passHref
-                    //           key={index}
-                    //           prefetch={false}
-                    //         >
-                    //           <a> {ReactHtmlParser(key.title)}</a>
-                    //         </Link>
-                    //       </div>
-                    //       <div>
-                    //         {ReactHtmlParser(key.content.substring(0, 400))}...
-                    //       </div>
-                    //       <div className="py-5">
-                    //         <Link
-                    //           href={`/blog/${key.slug}`}
-                    //           passHref
-                    //           key={index}
-                    //           prefetch={false}
-                    //         >
-                    //           Read More
-                    //         </Link>
-                    //       </div>
-                    //     </div>
-                    //   </Link>
-                    // </div>
                     <div></div>
                   )}
                 </>
@@ -206,9 +204,9 @@ export default function InfiniteScrollList() {
                                 src={key?.featuredImage?.node?.sourceUrl}
                                 width={250}
                                 height={150}
+                                layout="intrinsic"
                                 alt="Blogs Image"
                                 objectFit="cover"
-                                layout="intrinsic"
                                 quality={100}
                                 placeholder="blur"
                                 blurDataURL={`data:image/svg+xml;base64,${toBase64(
