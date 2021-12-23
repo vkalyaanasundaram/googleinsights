@@ -76,8 +76,9 @@ const Header = () => {
                   <Image
                     src="/Kapitus_Logo_white.webp"
                     width={250}
-                    height={100}
+                    height={85}
                     alt="Kapitus"
+                    layout="intrinsic"
                     className="cursor-pointer"
                   />
                 </a>
