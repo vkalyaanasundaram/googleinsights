@@ -134,16 +134,16 @@ export default function ProductPage() {
           <div className="w-full">
             <GroupColumn />
           </div>
-          <div className="w-full">
-            <FAQ />
+          <div className="flex">
+            <div className="w-full">
+              <FAQ />
+            </div>
           </div>
 
-          <div ref={observe}>
-            <ProductsBlogs data={data} />
-          </div>
-          <div className="w-full" ref={observe}>
-            {inView && <Footer />}
-          </div>
+            <div className="flex">
+              <ProductsBlogs data={data} />
+            </div>
+          <div className="w-full">{inView && <Footer />}</div>
         </div>
       </>
     );

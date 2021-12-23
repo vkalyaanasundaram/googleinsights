@@ -12,7 +12,7 @@ export default function ProductsBlogs({ data }) {
           <div key={key} className="my-20">
             <>
               {key == 0 ? (
-                <div className="xs:w-full my-10 ">
+                <div className="xs:w-full md:w-9/12 my-10 ">
                   <h3 className="my-10">{value?.blogHeading}</h3>
                   <Image
                     src={value?.blogImage?.sourceUrl}
