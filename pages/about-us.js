@@ -288,7 +288,7 @@ export default function AboutUs() {
           </div>
         ))}
         </div>*/}
-      <div className="xs:w-full container px-5 mt-10 mb-10 mx-auto" id="Teams">
+      <div className="xs:w-full px-5 mt-10 mb-10 mx-auto" id="Teams">
         <SimpleReactLightbox>
           <SRLWrapper options={options}>
             {data?.aboutUs?.meetTeam.map((value, key) => (
@@ -296,8 +296,8 @@ export default function AboutUs() {
                 <a href={value?.profileImage?.sourceUrl}>
                   <Image
                     src={value?.profileImage?.sourceUrl}
-                    width="320"
-                    height="380"
+                    width="300"
+                    height="340"
                     alt=""
                     srl_gallery_image="true"
                   />
@@ -308,10 +308,10 @@ export default function AboutUs() {
         </SimpleReactLightbox>
       </div>
 
-      <section className="xs:w-full container px-5 mt-10 mb-10 mx-auto">
+      <section className="xs:w-full px-5 mt-10 mb-10 mx-auto">
         {ReactHtmlParser(data?.aboutUs?.footeContent)}
       </section>
-      <section>
+      <section className="xs:w-full md:w-full float-left clear-both">
         <Footer />
       </section>
     </>
