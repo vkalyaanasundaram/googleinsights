@@ -59,7 +59,7 @@ export default function Contant() {
         </div>
         <div className="xs:w-full md:w-1/2">&nbsp;</div>
       </div>
-      {inView && <Map />}
+      <Map />
       <section ref={observe}>{inView && <Footer />}</section>
     </>
   );
