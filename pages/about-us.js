@@ -11,6 +11,12 @@ import ReactHtmlParser from "react-html-parser";
 //import ScrollSpy from "react-ui-scrollspy";
 import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
 import React, { useRef, useEffect, useState } from "react";
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from "react-device-detect";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -141,173 +147,83 @@ export default function AboutUs() {
         {ReactHtmlParser(data?.aboutUs?.aboutDescription)}
       </div>
       <h3 className="p-10 sticky">OUR HISTORY</h3>
-
-      {/* <div className=" relative ">
-        <div className="flex my-20">
-          <div className="flex-auto w-1/3 fixed top-1/3 ">
-            {data?.aboutUs?.ourHistory.map((value, key) => (
-              <div
-                key={key}
-                className="leftHistory m-10"
-                className={scroll ? "active" : "inactive"}
-                id={"employee-" + key}
-              >
-                <ScrollSpy scrollThrottle={100} useBoxMethod={false}>
-                <div className="text-kapitus py-3">{value?.noOfEmployees}</div>
-                <hr />
-                <div className="text-kapitus py-3">{value?.fundedAmount}</div>
-                <hr />
-                <div className="text-kapitus py-3">{value?.businessFunded}</div>
-                </ScrollSpy>
-              </div>
-            ))}
-          </div>
-          <div className="flex-col mx-10 w-1/3 left-1/3 relative">
-            {data?.aboutUs?.ourHistory.map((value, key) => (
-              <div
-                key={key}
-                className="float-left clear-both my-10 rightHistory"
-                id={key + "-content"}
-              >
-                <div className="text-kapitus text-3xl">
-                  {value?.companyYear}
-                </div>
-                <div className="ml-10 ">
-                  <Image
-                    src={value?.svgIcon?.sourceUrl}
-                    width="100"
-                    alt=""
-                    height="100"
-                    align="left"
-                  />
-                </div>
-                <div className="text-kapitus text-2xl ml-10">
-                  {value?.companyData}
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="fixed-center">Scroll position: {scrollY}px</div>
-        </div>
-      </div> */}
-
-      <div className="md:flex mx-2 mb-8 relative">
-        <div className="w-1/3 px-2">
-          <div ref={fixed} className="bg-grey-light">
-            {data?.aboutUs?.ourHistoryRow.map((value, key) => (
-              <div
-                key={key}
-                className={`ml-10 employeeContent ${
-                  key == 0 ? `active` : `inactive`
-                }`}
-                id={`section-${key + 1}`}
-              >
-                <div className="leftContent active-scroll-spy p-5 w-64">
-                  <div className="text-kapitus py-3">
-                    {value?.noOfEmployees}
-                  </div>
-                  <hr />
-                  <div className="text-kapitus py-3">{value?.fundedAmount}</div>
-                  <hr />
-                  <div className="text-kapitus py-3">
-                    {value?.businessFunded}
+      <BrowserView>
+        <div className="md:flex mx-2 mb-8 relative">
+          <div className="w-1/3 px-2">
+            <div ref={fixed} className="bg-grey-light">
+              {data?.aboutUs?.ourHistoryRow.map((value, key) => (
+                <div
+                  key={key}
+                  className={`ml-10 employeeContent ${
+                    key == 0 ? `active` : `inactive`
+                  }`}
+                  id={`section-${key + 1}`}
+                >
+                  <div className="leftContent active-scroll-spy p-5 w-64">
+                    <div className="text-kapitus py-3">
+                      {value?.noOfEmployees}
+                    </div>
+                    <hr />
+                    <div className="text-kapitus py-3">
+                      {value?.fundedAmount}
+                    </div>
+                    <hr />
+                    <div className="text-kapitus py-3">
+                      {value?.businessFunded}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="w-2/3 px-2">
-          <div className="bg-grey">
-            {data?.aboutUs?.ourHistoryRow.map((value, key) => (
-              <div
-                key={key}
-                id={`section_${key + 1}`}
-                className="md:pt-16 md:pb-8 businessContent flex w-full items-center"
-              >
-                <div className="text-right w-1/3 pr-20 text-kapitus text-3xl">
-                  {value?.companyYear}
-                </div>
-                <div className="float-left w-1/5">
-                  <Image
-                    src={value?.svgIcon?.sourceUrl}
-                    width="80"
-                    alt=""
-                    height="100"
-                  />
-                </div>
-                <div className="text-left w-1/2 text-kapitus text-2xl pr-4">
-                  {value?.companyData}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      {/*<div className="relative">
-        {data?.aboutUs?.ourHistoryRow.map((value, key) => (
-          <div key={key}>
-            <div className="flex my-20">
-              <div
-                className="ml-10 w-1/3 top-1/3 employeeContent "
-                id={"employee-" + key}
-              >
-                <div className="leftContent active-scroll-spy p-5">
-                  <div className="text-kapitus py-3">
-                    {value?.noOfEmployees}
-                  </div>
-                  <hr />
-                  <div className="text-kapitus py-3">{value?.fundedAmount}</div>
-                  <hr />
-                  <div className="text-kapitus py-3">
-                    {value?.businessFunded}
-                  </div>
-                </div>
-              </div>
-
-              <div className="w-1/2 businessContent" id={"content-" + key}>
-                <div className="flex">
-                  <div className="float-left text-kapitus text-3xl">
+          <div className="w-2/3 px-2">
+            <div className="bg-grey">
+              {data?.aboutUs?.ourHistoryRow.map((value, key) => (
+                <div
+                  key={key}
+                  id={`section_${key + 1}`}
+                  className="md:pt-16 md:pb-8 businessContent flex w-full items-center"
+                >
+                  <div className="text-right w-1/3 pr-20 text-kapitus text-3xl">
                     {value?.companyYear}
                   </div>
-                  <div className="float-left ml-10 ">
+                  <div className="float-left w-1/5">
                     <Image
                       src={value?.svgIcon?.sourceUrl}
-                      width="100"
+                      width="80"
                       alt=""
                       height="100"
                     />
                   </div>
-                  <div className="float-left ml-10 text-kapitus text-2xl">
+                  <div className="text-left w-1/2 text-kapitus text-2xl pr-4">
                     {value?.companyData}
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
-            <hr />
           </div>
-        ))}
-        </div>*/}
-      <div className="xs:w-full px-5 mt-10 mb-10 mx-auto" id="Teams">
-        <SimpleReactLightbox>
-          <SRLWrapper options={options}>
-            {data?.aboutUs?.meetTeam.map((value, key) => (
-              <div className="m-2 float-left" key={key}>
-                <a href={value?.profileImage?.sourceUrl}>
-                  <Image
-                    src={value?.profileImage?.sourceUrl}
-                    width="300"
-                    height="340"
-                    alt=""
-                    srl_gallery_image="true"
-                  />
-                </a>
-              </div>
-            ))}
-          </SRLWrapper>
-        </SimpleReactLightbox>
-      </div>
+        </div>
 
+        <div className="xs:w-full px-5 mt-10 mb-10 mx-auto" id="Teams">
+          <SimpleReactLightbox>
+            <SRLWrapper options={options}>
+              {data?.aboutUs?.meetTeam.map((value, key) => (
+                <div className="m-2 float-left" key={key}>
+                  <a href={value?.profileImage?.sourceUrl}>
+                    <Image
+                      src={value?.profileImage?.sourceUrl}
+                      width="300"
+                      height="340"
+                      alt=""
+                      srl_gallery_image="true"
+                    />
+                  </a>
+                </div>
+              ))}
+            </SRLWrapper>
+          </SimpleReactLightbox>
+        </div>
+      </BrowserView>
       <section className="xs:w-full px-5 mt-10 mb-10 mx-auto">
         {ReactHtmlParser(data?.aboutUs?.footeContent)}
       </section>
