@@ -30,10 +30,10 @@ export default function ProductsContainer({ data }) {
                 <h3 className="xs:text-xs mx-3 md:font-normal text-kapitus mt-4 mb-4 text-center mx-8 uppercase">
                   {value?.cardTitle}
                 </h3>
-                <div className="xs:mobileContent md:text-center text-lg px-5 text-kapitus productContent">
+                <div className="xs:mobileContent text-center text-lg px-5 text-kapitus md:productContent">
                   {ReactHtmlParser(value?.cardContent)}
                 </div>
-                <div className="absolute bottom-1 py-5 w-full text-center place-items-center ">
+                <div className="absolute bottom-1 w-full text-center place-items-center ">
                   <button
                     className="shadow-md p-5 py-3 bg-blue-900 text-sm"
                     onClick={(e) => {
