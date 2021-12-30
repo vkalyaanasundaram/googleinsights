@@ -285,7 +285,7 @@ export default function AboutUs() {
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
             autoPlay={true}
-            autoPlaySpeed={8000}
+            autoPlaySpeed={4000}
             removeArrowOnDeviceType={["tablet", "mobile"]}
           >
             {data?.aboutUs?.ourHistoryRow.map((value, key) => (
@@ -337,7 +337,7 @@ export default function AboutUs() {
             infinite={true}
             keyBoardControl={true}
             autoPlay={true}
-            autoPlaySpeed={5000}
+            autoPlaySpeed={8000}
             transitionDuration={800}
             containerClass="carousel-container"
             dotListClass="custom-dot-list-style"
