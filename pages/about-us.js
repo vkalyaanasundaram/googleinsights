@@ -247,16 +247,22 @@ export default function AboutUs() {
           <SimpleReactLightbox>
             <SRLWrapper options={options}>
               {data?.aboutUs?.meetTeam.map((value, key) => (
-                <div className="m-2 float-left" key={key}>
-                  <a href={value?.profileImage?.sourceUrl}>
-                    <Image
-                      src={value?.profileImage?.sourceUrl}
-                      width="300"
-                      height="340"
-                      alt=""
-                      srl_gallery_image="true"
-                    />
-                  </a>
+                <div key={key} className="text-center">
+                  <div className="m-2 float-left">
+                    <a href={value?.profileImage?.sourceUrl}>
+                      <Image
+                        src={value?.profileImage?.sourceUrl}
+                        width="300"
+                        height="340"
+                        alt=""
+                        srl_gallery_image="true"
+                      />
+                    </a>
+                    <div>
+                      <h4>{value?.name}</h4>
+                      <span>{value?.role}</span>
+                    </div>
+                  </div>
                 </div>
               ))}
             </SRLWrapper>
@@ -361,7 +367,7 @@ export default function AboutUs() {
           </Carousel>
         </section>
       </MobileView>
-      <section className="xs:w-full px-5 mt-10 mb-10 mx-auto">
+      <section className="xs:w-full md:container  px-5 mx-auto">
         {ReactHtmlParser(data?.aboutUs?.footeContent)}
       </section>
       <section className="xs:w-full md:w-full float-left clear-both">
