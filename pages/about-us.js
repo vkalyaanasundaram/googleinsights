@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Header from "../components/Header";
-import Banner from "../components/Banner";
+import AboutBanner from "../components/AboutBanner";
 import Center from "../components/about";
 import { useRouter } from "next/router";
 import useSWR from "swr";
@@ -181,7 +181,7 @@ export default function AboutUs() {
   return (
     <>
       <Header />
-      <Banner data={data?.aboutUs} />
+      <AboutBanner data={data?.aboutUs} />
       <div className="xs:w-full container px-5 mt-10 mb-10 mx-auto">
         {ReactHtmlParser(data?.aboutUs?.aboutDescription)}
       </div>
