@@ -15,7 +15,7 @@ export default async (req, resp) => {
                   height
                 }
             }
-            mobileBannerImage {
+            mobileImage {
                 sourceUrl
                 mediaDetails {
                   width
