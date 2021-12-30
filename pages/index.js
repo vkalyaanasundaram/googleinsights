@@ -159,6 +159,7 @@ export default function Home() {
                     width="100"
                     height="100"
                     alt=""
+                    layout="intrinsic"
                     objectFit="cover"
                     quality={100}
                     placeholder="blur"
@@ -178,6 +179,7 @@ export default function Home() {
                     width="100"
                     height="100"
                     alt=""
+                    layout="intrinsic"
                     objectFit="cover"
                     quality={100}
                     placeholder="blur"
@@ -197,6 +199,7 @@ export default function Home() {
                     width="100"
                     height="100"
                     alt=""
+                    layout="intrinsic"
                     objectFit="cover"
                     quality={100}
                     placeholder="blur"
