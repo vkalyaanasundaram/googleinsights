@@ -288,7 +288,10 @@ export default function AboutUs() {
           >
             {data?.aboutUs?.ourHistoryRow.map((value, key) => (
               <>
-                <setion className="float-left w-full text-sm" key={key}>
+                <setion
+                  className="float-left w-full text-sm text-center"
+                  key={key}
+                >
                   <div className="my-3">{value?.noOfEmployees}</div>
                   <hr />
                   <div className="my-3">{value?.fundedAmount}</div>
@@ -311,7 +314,7 @@ export default function AboutUs() {
                       height="100"
                     />
                   </div>
-                  <div className="xs:w-full text-left text-kapitus text-sm pr-4">
+                  <div className="xs:w-full text-center text-kapitus text-sm pr-4">
                     {value?.companyData}
                   </div>
                 </div>
