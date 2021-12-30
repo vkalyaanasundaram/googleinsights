@@ -64,6 +64,10 @@ div#Requirement {
 .mobileContent {
   min-height: calc(100vh - 150px - 50px);
 }
+.careerDetails p {
+  font-size: 15px;
+  line-height: 25px;
+}
 .formBtn button {
   padding: 0px 20px;
   background: #00395d;
