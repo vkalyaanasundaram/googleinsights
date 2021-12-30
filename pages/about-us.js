@@ -316,7 +316,7 @@ export default function AboutUs() {
                       height="100"
                     />
                   </div>
-                  <div className="xs:w-full text-center text-kapitus text-sm pr-4">
+                  <div className="xs:w-full text-center mb-10 text-kapitus text-sm pr-4">
                     {value?.companyData}
                   </div>
                 </div>
