@@ -56,11 +56,13 @@ div#Requirement {
   clear: both;
 }
 .productContent {
-  min-height: 80vh !important;
-  height: 100% !important;
+  margin: auto 0;
+  height: 450px;
+  padding: 10px 0px;
+  min-height: calc(120vh - 150px - 50px);
 }
 .mobileContent {
-  min-height: 105vh !important;
+  min-height: calc(100vh - 150px - 50px);
 }
 .formBtn button {
   padding: 0px 20px;
