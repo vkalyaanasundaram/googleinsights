@@ -285,6 +285,7 @@ export default function AboutUs() {
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
             autoPlay={true}
+            autoPlaySpeed={8000}
             removeArrowOnDeviceType={["tablet", "mobile"]}
           >
             {data?.aboutUs?.ourHistoryRow.map((value, key) => (
@@ -335,7 +336,8 @@ export default function AboutUs() {
             ssr={true} // means to render carousel on server-side.
             infinite={true}
             keyBoardControl={true}
-            autoPlay={false}
+            autoPlay={true}
+            autoPlaySpeed={5000}
             transitionDuration={800}
             containerClass="carousel-container"
             dotListClass="custom-dot-list-style"
