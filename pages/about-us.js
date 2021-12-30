@@ -278,17 +278,21 @@ export default function AboutUs() {
             showDots={false}
             responsive={responsive}
             ssr={true} // means to render carousel on server-side.
-            infinite={false}
+            infinite={true}
             keyBoardControl={true}
-            autoPlay={false}
             transitionDuration={800}
             containerClass="carousel-container"
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
+            autoPlay={true}
+            removeArrowOnDeviceType={["tablet", "mobile"]}
           >
             {data?.aboutUs?.ourHistoryRow.map((value, key) => (
               <>
-                <setion className="float-left w-full text-sm" key={key}>
+                <setion
+                  className="float-left w-full text-sm text-center"
+                  key={key}
+                >
                   <div className="my-3">{value?.noOfEmployees}</div>
                   <hr />
                   <div className="my-3">{value?.fundedAmount}</div>
@@ -311,7 +315,7 @@ export default function AboutUs() {
                       height="100"
                     />
                   </div>
-                  <div className="xs:w-full text-left text-kapitus text-sm pr-4">
+                  <div className="xs:w-full text-center text-kapitus text-sm pr-4">
                     {value?.companyData}
                   </div>
                 </div>
@@ -329,13 +333,14 @@ export default function AboutUs() {
             showDots={false}
             responsive={responsive}
             ssr={true} // means to render carousel on server-side.
-            infinite={false}
+            infinite={true}
             keyBoardControl={true}
             autoPlay={false}
             transitionDuration={800}
             containerClass="carousel-container"
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
+            removeArrowOnDeviceType={["tablet", "mobile"]}
           >
             {data?.aboutUs?.meetTeam.map((value, key) => (
               <div className="m-2 float-left" key={key}>
