@@ -17,6 +17,8 @@ import {
   isBrowser,
   isMobile,
 } from "react-device-detect";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -39,7 +41,24 @@ export default function AboutUs() {
   const [showHistory, setShowHistory] = useState(false);
   const fixed = useRef();
   // const [showEmp, setShowEmp] = useState(false);
+  const toBase64 = (str) =>
+    typeof window === "undefined"
+      ? Buffer.from(str).toString("base64")
+      : window.btoa(str);
 
+  const shimmer = (w, h) => `
+  <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <linearGradient id="g">
+        <stop stop-color="#333" offset="20%" />
+        <stop stop-color="#222" offset="50%" />
+        <stop stop-color="#333" offset="70%" />
+      </linearGradient>
+    </defs>
+    <rect width="${w}" height="${h}" fill="#333" />
+    <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+    <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+  </svg>`;
   const { data, error } = useSWR(`/api/page/${asPath}`, fetcher);
 
   const options = {
@@ -53,6 +72,26 @@ export default function AboutUs() {
     caption: {
       captionColor: "#a6cfa5",
       captionTextTransform: "uppercase",
+    },
+  };
+
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 1,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
     },
   };
 
@@ -224,6 +263,104 @@ export default function AboutUs() {
           </SimpleReactLightbox>
         </div>
       </BrowserView>
+      {/* Mobile View Our History */}
+      <MobileView>
+        <section className="xs:w-full px-5 mt-10 mb-10 mx-auto md:container">
+          <Carousel
+            swipeable={true}
+            draggable={false}
+            showDots={false}
+            responsive={responsive}
+            ssr={true} // means to render carousel on server-side.
+            infinite={false}
+            keyBoardControl={true}
+            autoPlay={false}
+            transitionDuration={800}
+            containerClass="carousel-container"
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+          >
+            {data?.aboutUs?.ourHistoryRow.map((value, key) => (
+              <>
+                <div className="container" key={key}>
+                  <div>{value?.noOfEmployees}</div>
+                  <hr />
+                  <div>{value?.fundedAmount}</div>
+                  <hr />
+                  <div>{value?.businessFunded}</div>
+                </div>
+
+                <div
+                  id={`section_${key + 1}`}
+                  className="md:pt-16 md:pb-8 text-center w-full items-center"
+                >
+                  <div className="xs:w-full pr-20 text-kapitus text-xl">
+                    {value?.companyYear}
+                  </div>
+                  <div className="xs:w-full">
+                    <Image
+                      src={value?.svgIcon?.sourceUrl}
+                      width="80"
+                      alt=""
+                      height="100"
+                    />
+                  </div>
+                  <div className="xs:w-full text-left text-kapitus text-sm pr-4">
+                    {value?.companyData}
+                  </div>
+                </div>
+              </>
+            ))}
+          </Carousel>
+        </section>
+      </MobileView>
+      {/* Mobile View Teams */}
+      <MobileView>
+        <section className="xs:w-full px-5 mt-10 mb-10 mx-auto md:container">
+          <Carousel
+            swipeable={true}
+            draggable={false}
+            showDots={false}
+            responsive={responsive}
+            ssr={true} // means to render carousel on server-side.
+            infinite={false}
+            keyBoardControl={true}
+            autoPlay={false}
+            transitionDuration={800}
+            containerClass="carousel-container"
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+          >
+            {data?.aboutUs?.meetTeam.map((value, key) => (
+              <div className="m-2 float-left" key={key}>
+                <a href={value?.profileImage?.sourceUrl}>
+                  <Image
+                    src={value?.profileImage?.sourceUrl}
+                    width="300"
+                    height="380"
+                    layout="intrinsic"
+                    objectFit="cover"
+                    quality={100}
+                    srl_gallery_image="true"
+                    placeholder="blur"
+                    blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                      shimmer(700, 475)
+                    )}`}
+                    alt="Kapitus"
+                  />
+                </a>
+                <div>
+                  <h3>{value?.name}</h3>
+                </div>
+                <div>
+                  <h4>{value?.role}</h4>
+                </div>
+                <div>{ReactHtmlParser(value?.careerDetails)}</div>
+              </div>
+            ))}
+          </Carousel>
+        </section>
+      </MobileView>
       <section className="xs:w-full px-5 mt-10 mb-10 mx-auto">
         {ReactHtmlParser(data?.aboutUs?.footeContent)}
       </section>

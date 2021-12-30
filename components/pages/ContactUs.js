@@ -15,9 +15,7 @@ const ContactUs = (data) => {
   mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
 
   return (
-    <div>
       <div id="kapitus-map" className="w-full" style={{ height: 500 }}></div>
-    </div>
   );
 };
 
