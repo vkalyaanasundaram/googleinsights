@@ -366,7 +366,9 @@ export default function AboutUs() {
                 <div>
                   <h4>{value?.role}</h4>
                 </div>
-                <div>{ReactHtmlParser(value?.careerDetails)}</div>
+                <div className="text-sm">
+                  {ReactHtmlParser(value?.careerDetails)}
+                </div>
               </div>
             ))}
           </Carousel>
