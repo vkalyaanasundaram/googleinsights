@@ -271,7 +271,7 @@ export default function AboutUs() {
       </BrowserView>
       {/* Mobile View Our History */}
       <MobileView>
-        <section className="xs:w-full px-5 mt-10 mb-10 mx-auto md:container">
+        <section className="xs:w-full px-5 my-10 mx-5 shadow-md">
           <Carousel
             swipeable={true}
             draggable={false}
@@ -288,22 +288,22 @@ export default function AboutUs() {
           >
             {data?.aboutUs?.ourHistoryRow.map((value, key) => (
               <>
-                <div className="container" key={key}>
-                  <div>{value?.noOfEmployees}</div>
+                <setion className="float-left w-full text-sm" key={key}>
+                  <div className="my-3">{value?.noOfEmployees}</div>
                   <hr />
-                  <div>{value?.fundedAmount}</div>
+                  <div className="my-3">{value?.fundedAmount}</div>
                   <hr />
-                  <div>{value?.businessFunded}</div>
-                </div>
+                  <div className="my-3">{value?.businessFunded}</div>
+                </setion>
 
                 <div
                   id={`section_${key + 1}`}
                   className="md:pt-16 md:pb-8 text-center w-full items-center"
                 >
-                  <div className="xs:w-full pr-20 text-kapitus text-xl">
+                  <div className="xs:w-full my-10 clear-both text-center text-2xl">
                     {value?.companyYear}
                   </div>
-                  <div className="xs:w-full">
+                  <div className="xs:w-full sm:w-full">
                     <Image
                       src={value?.svgIcon?.sourceUrl}
                       width="80"
