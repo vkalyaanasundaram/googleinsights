@@ -280,7 +280,6 @@ export default function AboutUs() {
             ssr={true} // means to render carousel on server-side.
             infinite={true}
             keyBoardControl={true}
-            autoPlay={false}
             transitionDuration={800}
             containerClass="carousel-container"
             dotListClass="custom-dot-list-style"
