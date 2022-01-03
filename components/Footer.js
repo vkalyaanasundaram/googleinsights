@@ -18,7 +18,7 @@ const Footer = () => {
               <div className="container mx-auto">
                 <div className="flex flex-wrap md:text-left text-center order-first">
                   <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                    <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+                    <h2 className="title-font font-medium text-kapitus tracking-widest text-sm mb-3">
                       <Link href="/about-us" passHref>
                         ABOUT US
                       </Link>
@@ -36,7 +36,7 @@ const Footer = () => {
                     </nav>
                   </div>
                   <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                    <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+                    <h2 className="title-font font-medium text-kapitus tracking-widest text-sm mb-3">
                       PRODUCTS
                     </h2>
                     <nav className="list-none mb-10">
@@ -56,7 +56,7 @@ const Footer = () => {
                     </nav>
                   </div>
                   <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                    <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+                    <h2 className="title-font font-medium text-kapitus tracking-widest text-sm mb-3">
                       <Link href="/contact-us"> CONTACT US</Link>
                     </h2>
                     <nav className="list-none mb-10">
@@ -77,7 +77,7 @@ const Footer = () => {
                     </nav>
                   </div>
                   <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                    <h2 className="title-font font-medium text-gray-900 tracking-widest text-xl mb-3">
+                    <h2 className="title-font font-medium text-kapitus tracking-widest text-xl mb-3">
                       Signup For Our Newsletter
                     </h2>
                     <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
@@ -99,12 +99,12 @@ const Footer = () => {
                         Button
                       </button>
                     </div>
-                    <p className="text-gray-500 text-sm mt-2 md:text-left text-center">
+                    {/* <p className="text-gray-500 text-sm mt-2 md:text-left text-center">
                       Bitters chicharrones fanny pack
                       <span className="lg:block hidden">
                         waistcoat green juice
                       </span>
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </div>
