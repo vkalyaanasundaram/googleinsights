@@ -99,12 +99,12 @@ const Footer = () => {
                         Button
                       </button>
                     </div>
-                    {/* <p className="text-gray-500 text-sm mt-2 md:text-left text-center">
+                    <p className="text-gray-500 text-sm mt-2 md:text-left text-center">
                       Bitters chicharrones fanny pack
                       <span className="lg:block hidden">
                         waistcoat green juice
                       </span>
-                    </p> */}
+                    </p>
                   </div>
                 </div>
               </div>
