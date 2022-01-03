@@ -369,14 +369,14 @@ export default function AboutUs() {
                   <h4>{value?.role}</h4>
                 </div>
                 <div className="text-sm careerDetails">
-                  {ReactHtmlParser(value?.careerDetails)}
+                  <p>{ReactHtmlParser(value?.careerDetails)}</p>
                 </div>
               </div>
             ))}
           </Carousel>
         </section>
       </MobileView>
-      <section className="xs:w-full md:container  px-5 mx-auto">
+      <section className="xs:w-full md: float-left mx-5 px-5 py-10">
         {ReactHtmlParser(data?.aboutUs?.footeContent)}
       </section>
       <section className="xs:w-full md:w-full float-left clear-both">
