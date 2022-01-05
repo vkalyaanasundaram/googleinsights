@@ -1,0 +1,195 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+.inactive {
+  display: none;
+}
+.active {
+  display: block !important;
+}
+.active-scroll-spy {
+  background-color: yellowgreen;
+  border-radius: 15px;
+}
+.blogImgSize {
+  width: 300px;
+  height: auto;
+}
+.blogImg {
+  float: left;
+  margin-right: 10px;
+}
+.blogContent {
+  margin-left: 10px;
+}
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #00395d;
+  color: #fff;
+  padding: 20px;
+  font-size: 20px;
+  z-index: 999;
+  text-align: center;
+}
+/* .blogFooterSticky {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  padding: 0px;
+  font-size: 20px;
+  z-index: 999;
+  text-align: center;
+} */
+.productsIcon img {
+  float: left;
+  height: 45px;
+  width: 150px;
+  padding: 0px;
+  margin-top: 25px;
+}
+div#Requirement {
+  float: left;
+  clear: both;
+}
+.productContent {
+  margin: auto 0;
+  height: 450px;
+  padding: 10px 0px;
+  min-height: calc(120vh - 150px - 50px);
+}
+.mobileContent {
+  min-height: calc(100vh - 150px - 50px);
+}
+.careerDetails p {
+  font-size: 15px;
+  line-height: 25px;
+}
+.formBtn button {
+  padding: 0px 20px;
+  background: #00395d;
+  color: #fff;
+  margin-top: 20px;
+  font-size: 15px;
+}
+.productSticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  color: #fff;
+  padding: 20px;
+  font-size: 15px;
+  z-index: 999;
+  text-align: left;
+  width: 100%;
+}
+.searchResultNav i.fa.fa-search {
+  font-size: 30px;
+  position: absolute;
+  right: 2px;
+  font-weight: 300;
+  top: 2px;
+  background: #00395d;
+  padding: 5px;
+  color: #fff;
+}
+i.fa.fa-search {
+  font-size: 30px;
+  position: absolute;
+  right: 57px;
+  font-weight: 300;
+  top: 1px;
+  background: #00395d;
+  padding: 6px;
+  color: #fff;
+}
+button {
+  padding: 15px 30px;
+  background: #00395d;
+  color: #fff;
+  margin-top: 20px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.avia_textblock ul li::before {
+  content: "■";
+  color: rgb(121 189 101);
+  padding-right: 15px;
+}
+ul li {
+  color: #66899e;
+  line-height: 28.5px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+span {
+  font-size: 16px;
+  font-weight: 400;
+  color: #00395d;
+  margin: 10px 0px;
+}
+h3 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #00395d;
+  margin: 15px 0px;
+}
+h2 {
+  color: #fff;
+  font-size: 30px;
+}
+h4 {
+  font-size: 25px;
+  font-weight: 500;
+  color: #00395d;
+}
+p {
+  font-size: 18px;
+  line-height: 29.7px;
+  margin-top: 15px;
+  color: #66899e;
+}
+strong {
+  font-size: 23px;
+  line-height: 29.7px;
+  color: #00395d;
+}
+section.slide-entry {
+  float: left;
+  width: 25%;
+}
+#steps section {
+  float: left;
+  width: 20%;
+}
+#steps .slide-entry-wrap.active-slide {
+  float: left;
+  width: 100%;
+  clear: both;
+  margin: 20px 0px;
+}
+section.slide-entry p img {
+  width: 115px;
+  height: 115px;
+  text-align: center;
+}
+h4 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 20px 0px 15px 0px;
+}
+.SuccessContent p {
+  font-size: 29px;
+  line-height: 45px;
+}
