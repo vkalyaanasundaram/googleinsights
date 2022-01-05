@@ -28,7 +28,6 @@ const Content = ({ data }) => {
   // console.log(data);
   const { asPath, pathname } = useRouter();
 
-  alert(asPath);
   return (
     <div className="xs:w-full container px-5 mt-10 mb-10 mx-auto">
       <div className="container">
@@ -61,6 +60,9 @@ const Content = ({ data }) => {
               <div className="place-items-center">
                 <p className="mb-4 p-5">{value?.cardContent}</p>
               </div>
+              {/* <div className="grid place-items-center w-full text-right">
+                <button>Button</button>
+              </div> */}
             </div>
           ))}
         </section>
