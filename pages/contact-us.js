@@ -52,7 +52,7 @@ export default function Contact() {
 
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
-
+  // alert(data?.ACFcontact?.mobileImage?.sourceUrl);
   return (
     <>
       <Header />
@@ -76,9 +76,9 @@ export default function Contact() {
         </div>
         <div className="xs:w-full">
           <MobileView>
-            {data?.mobileImage?.sourceUrl?.length > 0 && (
+            {data?.ACFcontact?.mobileImage?.sourceUrl?.length > 0 && (
               <Image
-                src={data?.mobileImage?.sourceUrl}
+                src={data?.ACFcontact?.mobileImage?.sourceUrl}
                 width={500}
                 height={750}
                 layout="intrinsic"
