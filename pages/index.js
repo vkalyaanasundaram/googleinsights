@@ -149,8 +149,8 @@ export default function Home() {
             <Content data={data?.page?.ThreeColumnStaticPage?.cards} />
           )}
         </div> */}
-       {inView && ( <div className="container my-10" >
-          
+        {inView && (
+          <div className="container my-10">
             <section className="grid gap-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3">
               <div className="shadow-md rounded-md overflow-hidden dark:bg-red-100 dark:text-black">
                 <div className="grid place-items-center w-full text-right">
@@ -213,8 +213,8 @@ export default function Home() {
                 </h4>
               </div>
             </section>
-          )}
-        </div>
+          </div>
+        )}
       </section>
 
       <section>{inView && <Footer />}</section>

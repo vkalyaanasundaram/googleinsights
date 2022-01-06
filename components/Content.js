@@ -67,6 +67,7 @@ const Content = ({ data }) => {
                     href={`/partner/${value?.cardTitle
                       .toLowerCase()
                       .replace(" ", "-")}`}
+                    passHref
                   >
                     <button>LEARN MORE</button>
                   </Link>
