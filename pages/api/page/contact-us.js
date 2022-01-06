@@ -17,6 +17,13 @@ export default async (req, resp) => {
             }
             mediaItemUrl
           }
+          mobileImage {
+            mediaDetails {
+              width
+              height
+            }
+            sourceUrl
+          }
         }
       }
     }`;
