@@ -67,7 +67,7 @@ export default function PartnerPage() {
                   alt=""
                 />
               </div>
-              <div className="text-center text-3xl text-blue-800">
+              <div className="text-center text-2xl text-blue-800">
                 {value?.title}
               </div>
             </div>
