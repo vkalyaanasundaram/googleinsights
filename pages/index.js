@@ -97,7 +97,7 @@ export default function Home() {
                     ?.sourceUrl
                 }
                 width={500}
-                height={450}
+                height={750}
                 layout="intrinsic"
                 objectFit="cover"
                 quality={100}
