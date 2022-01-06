@@ -49,9 +49,9 @@ const Content = ({ data }) => {
                   )}`}
                 />
               </div>
-              <h2 className="text-xl font-semibold text-center my-10">
+              <h3 className="text-xl font-semibold text-center my-10">
                 {ReactHtmlParser(value?.cardTitle)}
-              </h2>
+              </h3>
               <div className="place-items-center">
                 <div className="mb-4 p-5">
                   {ReactHtmlParser(value?.cardContent)}
