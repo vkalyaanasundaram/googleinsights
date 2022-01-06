@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import ReactHtmlParser from "react-html-parser";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import { ContentNav, StaticContent } from "../styles/Home.module.css";
 
@@ -25,6 +26,7 @@ const shimmer = (w, h) => `
 
 const Content = ({ data }) => {
   // console.log(data);
+  const { asPath } = useRouter();
 
   return (
     <div className="xs:w-full container px-5 mt-10 mb-10 mx-auto">
@@ -58,6 +60,19 @@ const Content = ({ data }) => {
               <div className="place-items-center">
                 <p className="mb-4 p-5">{value?.cardContent}</p>
               </div>
+              {asPath == "/partner" ? (
+                <div className="grid place-items-center w-full text-right my-5 absolute bottom-0">
+                  <Link
+                    href={`/partner/${value?.cardTitle
+                      .toLowerCase()
+                      .replace(" ", "-")}`}
+                  >
+                    <button>LEARN MORE</button>
+                  </Link>
+                </div>
+              ) : (
+                <div></div>
+              )}
             </div>
           ))}
         </section>
