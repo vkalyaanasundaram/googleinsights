@@ -28,7 +28,6 @@ const shimmer = (w, h) => `
 const Content = ({ data }) => {
   // console.log(data);
   const { asPath, pathname } = useRouter();
-  alert(asPath);
 
   return (
     <div className="xs:w-full container px-5 mt-10 mb-10 mx-auto">
