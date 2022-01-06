@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import ReactHtmlParser from "react-html-parser";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { ContentNav, StaticContent } from "../styles/Home.module.css";
