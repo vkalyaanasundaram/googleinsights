@@ -86,8 +86,10 @@ export default function ProductPage() {
   const { data, error } = useSWR(`/api/page/${asPath}`, fetcher);
 
   const { observe, inView } = useInView({
-    onEnter: ({ unobserve }) => unobserve(), // only run once
-    onLeave: ({ observe }) => observe(),
+    // Stop observe when the target enters the viewport, so the "inView" only triggered once
+    unobserveOnEnter: true,
+    // For better UX, we can grow the root margin so the image will be loaded before it comes to the viewport
+    rootMargin: "50px",
   });
 
   if (error) return <div>failed to load</div>;
@@ -120,29 +122,33 @@ export default function ProductPage() {
           </div>
 
           <div className="xs:w-full" ref={observe}>
-            <Content content={ProductContent} desc={ProductDescription} />
+            {inView && (
+              <Content content={ProductContent} desc={ProductDescription} />
+            )}
           </div>
           <div className="container">
-            <div className="xs:w-full md:w-11/12 ">
-              <Requirements data={RequirementsData} />
+            <div className="xs:w-full md:w-9/12 " ref={observe}>
+              {inView && <Requirements data={RequirementsData} />}
             </div>
-            <div className="xs:w-full md:w-11/12 ">
-              <How data={HowToApply} />
+            <div className="xs:w-full md:w-9/12 " ref={observe}>
+              {inView && <How data={HowToApply} />}
             </div>
-            <div className="xs:w-full md:w-11/12 ">
-              <Who data={WhoShould} />
+            <div className="xs:w-full md:w-9/12 " ref={observe}>
+              {inView && <Who data={WhoShould} />}
             </div>
           </div>
-          <div className="w-full">
-            <GroupColumn />
+          <div className="w-full" ref={observe}>
+            {inView && <GroupColumn />}
           </div>
-          <div className="container">
-            <FAQ />
+          <div className="container" ref={observe}>
+            {inView && <FAQ />}
           </div>
-          <section className="container my-10">
-            <ProductsBlogs data={data} />
+          <section className="container my-10" ref={observe}>
+            {inView && <ProductsBlogs data={data} />}
           </section>
-          <section className="w-full">{inView && <Footer />}</section>
+          <section className="w-full" ref={observe}>
+            {inView && <Footer />}
+          </section>
         </div>
       </>
     );

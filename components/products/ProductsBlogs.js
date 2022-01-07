@@ -36,7 +36,7 @@ export default function ProductsBlogs({ data }) {
                         />
                       </div>
                     </div>
-                    <div className="xs:w-full md:w-9/12 blogContent">
+                    <div className="xs:w-full md:w-8/12 blogContent">
                       <div>
                         <h4>{value.title}</h4>
                         <p className="text-kapitus text-lg">

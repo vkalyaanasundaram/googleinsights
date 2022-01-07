@@ -54,7 +54,7 @@ export default function SinglePage() {
             <Content data={ThreeColumnStaticPage?.cards} />
           </div>
         </div>
-        <div className="container p-10">
+        <div className="w-full px-5">
           <FinanceSolutions data={ThreeColumnStaticPage} />
         </div>
       </div>

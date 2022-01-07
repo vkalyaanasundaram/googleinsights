@@ -34,17 +34,17 @@ const FAQ = () => {
   //   console.log(faq)
   return (
     <>
-      <div className="container p-10">
+      <div className="px-10">
         <h3>FAQs</h3>
         {faq?.map((value, key) => (
           // console.log(data);
 
-          <div className="accordion-item" key={key}>
+          <div className="accordion-item w-8/12" key={key}>
             <div
               className="accordion-title"
               onClick={() => setIsActive(!isActive)}
             >
-              <div className="float-left py-5 px-2 clear-both w-full border-gray-300 border-2">
+              <div className="py-5 border-gray-300 border-b-2">
                 {value?.question}
                 <span className="float-right">{isActive ? "-" : "+"}</span>
               </div>
