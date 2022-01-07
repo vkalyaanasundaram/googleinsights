@@ -136,6 +136,9 @@ ul li {
 * {
   box-sizing: border-box;
 }
+hr {
+  border-color: #72b664;
+}
 span {
   font-size: 16px;
   font-weight: 400;
@@ -145,6 +148,12 @@ span {
 h3 {
   font-size: 30px;
   font-weight: bold;
+  color: #00395d;
+  margin: 15px 0px;
+}
+h5 {
+  font-size: 16px;
+  font-weight: semi-bold;
   color: #00395d;
   margin: 15px 0px;
 }

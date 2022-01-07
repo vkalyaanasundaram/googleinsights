@@ -44,7 +44,7 @@ const FAQ = () => {
               className="accordion-title"
               onClick={() => setIsActive(!isActive)}
             >
-              <div className="py-5 border-gray-300 border-b-2">
+              <div className="py-5 border-gray-300 border-b-2 text-kapitus">
                 {value?.question}
                 <span className="float-right">{isActive ? "-" : "+"}</span>
               </div>
@@ -57,6 +57,7 @@ const FAQ = () => {
           </div>
         ))}
       </div>
+      
     </>
   );
 };

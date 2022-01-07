@@ -126,18 +126,19 @@ export default function ProductPage() {
               <Content content={ProductContent} desc={ProductDescription} />
             )}
           </div>
+
           <div className="container">
             <div className="xs:w-full md:w-9/12 " ref={observe}>
               {inView && <Requirements data={RequirementsData} />}
             </div>
-            <div className="xs:w-full md:w-9/12 " ref={observe}>
+            <div className="xs:w-full md:w-9/12 flex" ref={observe}>
               {inView && <How data={HowToApply} />}
             </div>
-            <div className="xs:w-full md:w-9/12 " ref={observe}>
+            <div className="xs:w-full md:w-9/12 flex" ref={observe}>
               {inView && <Who data={WhoShould} />}
             </div>
           </div>
-          <div className="w-full" ref={observe}>
+          <div className="xs:w-full md:w-9/12 flex" ref={observe}>
             {inView && <GroupColumn />}
           </div>
           <div className="container" ref={observe}>
