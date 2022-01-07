@@ -13,6 +13,9 @@ body {
   background-color: yellowgreen;
   border-radius: 15px;
 }
+.mapboxgl-control-container {
+  display: none;
+}
 .blogImgSize {
   width: 300px;
   height: auto;
