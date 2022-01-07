@@ -121,7 +121,7 @@ export default function ProductPage() {
             <ProductBanner data={IndividualBanner} />
           </div>
 
-          <div className="xs:w-full" ref={observe} ref={observe}>
+          <div className="xs:w-full" ref={observe}>
             {inView && (
               <Content content={ProductContent} desc={ProductDescription} />
             )}
