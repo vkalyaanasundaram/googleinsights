@@ -10,7 +10,7 @@ const Who = ({ data }) => {
   return (
     <>
       <div id="Who">
-        <div>
+        <div className="my-5">
           <hr />
         </div>
         <div className="container py-10 px-5">{ReactHtmlParser(data)}</div>

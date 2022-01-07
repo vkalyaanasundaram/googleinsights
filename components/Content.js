@@ -35,7 +35,7 @@ const Content = ({ data }) => {
         <section className="grid gap-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3">
           {data?.map((value, key) => (
             <div
-              className="shadow-md rounded-md overflow-hidden dark:bg-red-100 dark:text-black relative py-10 min-h-min border-2"
+              className="overflow-hidden dark:bg-red-100 dark:text-black relative py-10 min-h-min border-2"
               key={key}
             >
               <div className="grid place-items-center w-full text-right">
