@@ -46,8 +46,10 @@ export default function Contact() {
   </svg>`;
 
   const { observe, inView } = useInView({
-    onEnter: ({ unobserve }) => unobserve(), // only run once
-    onLeave: ({ observe }) => observe(),
+    // Stop observe when the target enters the viewport, so the "inView" only triggered once
+    unobserveOnEnter: true,
+    // For better UX, we can grow the root margin so the image will be loaded before it comes to the viewport
+    rootMargin: "50px",
   });
 
   if (error) return <div>failed to load</div>;
@@ -95,7 +97,8 @@ export default function Contact() {
         </div>
         <div className="xs:w-full md:w-1/2">&nbsp;</div>
       </div>
-      {inView && <Map />}
+
+      <section ref={observe}>{inView && <Map />}</section>
       <section ref={observe}>{inView && <Footer />}</section>
     </>
   );
