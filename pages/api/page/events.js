@@ -11,21 +11,24 @@ export default async (req, resp) => {
                     events
                     eventTitle
                 }
-                bannerImage {
-                    mediaDetails {
-                        file
-                        width
-                        height
-                    }
+                banner {
+                  bannerButton
+                  bannerTitle
+                  bannerDescription
+                  mobileBannerImage {
                     sourceUrl
-                }
-                mobileBanner {
                     mediaDetails {
-                        file
-                        width
-                        height
+                      height
+                      width
                     }
+                  }
+                  bannerImage {
                     sourceUrl
+                    mediaDetails {
+                      height
+                      width
+                    }
+                  }
                 }
             }
         }

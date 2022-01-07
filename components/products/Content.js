@@ -62,8 +62,8 @@ const Content = ({ content, desc }) => {
             {ReactHtmlParser(desc)}
           </div>
         </div>
-        <div className="xs:w-full md:w-11/12">
-          <div className="px-5">{ReactHtmlParser(content)}</div>
+        <div className="xs:w-full md:w-8/12">
+          <div className="xs:px-5 md:px-10">{ReactHtmlParser(content)}</div>
         </div>
       </div>
     </>

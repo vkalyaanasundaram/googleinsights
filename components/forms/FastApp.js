@@ -24,7 +24,7 @@ export default function App() {
   console.log(watch("fund")); // watch input value by passing the name of it
 
   return (
-    <div className="max-w-2xl m-auto bg-transparent p-8">
+    <div className="max-w-2xl m-auto bg-transparent p-2">
       <div className="mb-6 text-center text-kapitus text-lg my-6 font-bold">
         BUSINESS INFORMATION
       </div>
