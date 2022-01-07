@@ -5,6 +5,9 @@ export default function ProductsBlogs({ data }) {
   return (
     <>
       <div className="container py-10 px-5">
+        <div className="xs:w-full md:w-9/12 ">
+          <hr />
+        </div>
         <div className="float-left my-10">
           <h3>{data?.individualProducts?.blogHeading}</h3>
         </div>

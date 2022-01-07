@@ -11,6 +11,9 @@ const Requirements = ({ data }) => {
     <>
       <div id="Requirement">
         <div className="container py-10 px-5">{ReactHtmlParser(data)}</div>
+        <div>
+          <hr />
+        </div>
       </div>
     </>
   );

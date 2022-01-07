@@ -37,10 +37,10 @@ const GroupColumn = () => {
         <div className="xs:grid-cols-1 md:grid-cols-3 lg:grid grid-cols-3 gap-4">
           {groupColumn?.map((value, key) => (
             <div key={key}>
-              <div className="text-6xl text-center text-kapitus">
+              <div className="text-6xl font-bold text-center text-kapitus">
                 {value?.groupNumber}
               </div>
-              <div className="text-4xl text-center mt-10 text-kapitus">
+              <div className="text-2xl font-semibold text-center mt-10 text-kapitus">
                 {value?.groupTitle}
               </div>
               <div className="text-base text-center mt-10 text-kapitus">
@@ -48,6 +48,9 @@ const GroupColumn = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="my-10">
+          <hr />
         </div>
       </div>
     </>
