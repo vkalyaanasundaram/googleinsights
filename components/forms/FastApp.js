@@ -25,7 +25,7 @@ export default function App() {
 
   return (
     <div className="max-w-2xl m-auto bg-transparent p-2">
-      <div className="mb-6 text-center text-kapitus text-lg my-6 font-bold">
+      <div className="text-center text-kapitus text-lg my-2 font-bold">
         BUSINESS INFORMATION
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>

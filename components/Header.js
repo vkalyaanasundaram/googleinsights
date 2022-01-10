@@ -10,12 +10,14 @@ import {
   FaTwitterSquare,
   FaYoutube,
 } from "react-icons/fa";
+import { Squash as Hamburger } from "hamburger-react";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const Header = () => {
   const [isMenuVisible, setMenuVisibility] = useState(false);
   const { data, error } = useSWR("/api/page/header", fetcher);
+  const [isOpen, setOpen] = useState(false);
 
   if (error) return <div>failed to load</div>;
 
@@ -96,7 +98,13 @@ const Header = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <title>Menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                {/* <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" /> */}
+                <Hamburger
+                  toggled={isOpen}
+                  toggle={setOpen}
+                  size={35}
+                  color="#FFFFFF"
+                />
               </svg>
             </button>
           </div>
