@@ -38,7 +38,7 @@ export default function FastApplication() {
       </div>
       <div className="max-w-2xl m-auto bg-white p-8">
         <hr className="divide-y border-1 border-green-600" />
-        <div className="mb-6 text-center text-kapitus text-lg my-6 font-bold">
+        <div className="text-center text-kapitus text-lg my-2 font-bold">
           BUSINESS INFORMATION
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
