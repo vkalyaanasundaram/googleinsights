@@ -39,7 +39,7 @@ const FAQ = () => {
         {faq?.map((value, key) => (
           // console.log(data);
 
-          <div className="accordion-item w-8/12" key={key}>
+          <div className="accordion-item md:w-8/12" key={key}>
             <div
               className="accordion-title"
               onClick={() => setIsActive(!isActive)}
@@ -57,7 +57,6 @@ const FAQ = () => {
           </div>
         ))}
       </div>
-      
     </>
   );
 };

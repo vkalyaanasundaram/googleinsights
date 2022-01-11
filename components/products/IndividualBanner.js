@@ -6,7 +6,7 @@ import ReactHtmlParser, { htmlparser2 } from "react-html-parser";
 import useSWR from "swr";
 import { request } from "graphql-request";
 import { useRouter } from "next/router";
-import ApplyNow from "../../components/forms/applynow";
+import ApplyNow from "../../components/forms/CommonShortForm";
 import {
   bgWrap,
   bgText,
@@ -49,7 +49,7 @@ export default function IndividualBanner({ data }) {
     <>
       <section className="relative">
         <div className={bgWrap}>
-          <div className="opacity-40">
+          <div className="bannerOpacity">
             {MobileBannerImage?.length > 0 && (
               <div className={heroMobileImage}>
                 <Image
@@ -75,7 +75,7 @@ export default function IndividualBanner({ data }) {
                   src={BannerImg}
                   width={data?.banner?.mediaDetails?.width}
                   // height={data?.banner?.mediaDetails?.height}
-                  height={900}
+                  height={1150}
                   layout="responsive"
                   objectFit="cover"
                   quality={100}
@@ -150,7 +150,7 @@ export default function IndividualBanner({ data }) {
                   </div>
                 </div>
 
-                <div className="xs: hidden sm:hidden md:block ">
+                <div className="xs:w-full hidden sm:hidden md:block z-50">
                   <ApplyNow />
                 </div>
               </div>

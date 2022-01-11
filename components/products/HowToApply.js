@@ -10,9 +10,7 @@ const HowToApply = ({ data }) => {
   return (
     <>
       <div id="HowApply">
-        <div className="px-5">
-          <div>{ReactHtmlParser(data)}</div>
-        </div>
+        <div className="px-5 my-20">{ReactHtmlParser(data)}</div>
       </div>
     </>
   );

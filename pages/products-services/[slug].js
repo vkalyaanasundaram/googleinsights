@@ -116,22 +116,37 @@ export default function ProductPage() {
           <title>Products We Offer</title>
         </Head>
         <Header />
-        <div className="w-full">
-          <div className="w-full">
+        <section className="w-full">
+          <section className="productSticky ">
+            <div className="container">
+              <div className="ml-5">
+                <span className="xs:p-2 text-pink md:pr-10 ">
+                  <a href="#Requirement"> Requirements</a>
+                </span>
+                <span className="xs:p-2 text-pink md:pr-10">
+                  <a href="#HowApply"> How To Apply</a>
+                </span>
+                <span className="xs:p-2 text-pink md:pr-10">
+                  <a href="#Who"> Who is this For?</a>
+                </span>
+              </div>
+            </div>
+          </section>
+          <section className="w-full">
             <ProductBanner data={IndividualBanner} />
-          </div>
+          </section>
 
-          <div className="xs:w-full" ref={observe}>
+          <section ref={observe}>
             {inView && (
               <Content content={ProductContent} desc={ProductDescription} />
             )}
-          </div>
+          </section>
 
           <div className="container">
             <div className="xs:w-full md:w-9/12 " ref={observe}>
               {inView && <Requirements data={RequirementsData} />}
             </div>
-            <div className="xs:w-full md:w-9/12" ref={observe}>
+            <div className="xs:w-full md:w-9/12 " ref={observe}>
               {inView && <How data={HowToApply} />}
             </div>
             <div className="xs:w-full md:w-9/12" ref={observe}>
@@ -150,7 +165,7 @@ export default function ProductPage() {
           <section className="w-full" ref={observe}>
             {inView && <Footer />}
           </section>
-        </div>
+        </section>
       </>
     );
   } else {
