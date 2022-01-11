@@ -25,6 +25,12 @@ module.exports = {
       footer: "#e6ebef",
       titleGreen: "rgb(5, 113, 58)",
       pink: "#a94068",
+      liteblue: "#66899e",
+      errorred: "rgb(170, 68, 107)",
+      kapitusLiteGreen: "rgb(115, 181, 100)",
+      lightgreen: "rgb(114 182 100)",
+      kapitusblue: "#66899e",
+      formred: "#790000",
       code: {
         green: "#b5f4a5",
         yellow: "#ffe484",

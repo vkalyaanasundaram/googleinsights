@@ -84,7 +84,7 @@ div#Requirement {
   top: 0;
   background-color: #fff;
   color: #fff;
-  padding: 20px;
+  padding: 20px 0px;
   font-size: 15px;
   z-index: 999;
   text-align: left;
@@ -116,6 +116,20 @@ button {
   color: #fff;
   margin-top: 20px;
 }
+p button {
+  padding: 10px 25px;
+  background: #00395d;
+  color: #fff;
+  margin-top: 20px;
+  font-size: 15px;
+}
+.bannerOpacity {
+  opacity: 0.1;
+  background-color: #01395d;
+}
+.form-border {
+  border: solid 1px #ccc;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -125,6 +139,9 @@ a {
   content: "■";
   color: rgb(121 189 101);
   padding-right: 15px;
+  font-size: 11px;
+  width: 10px !important;
+  height: 10px !important;
 }
 ul li {
   color: #66899e;
@@ -149,7 +166,11 @@ h3 {
   font-size: 30px;
   font-weight: bold;
   color: #00395d;
+  float: left;
   margin: 15px 0px;
+  clear: both;
+  width: 100%;
+  /* padding: 20px 0px; */
 }
 h5 {
   font-size: 16px;
@@ -174,6 +195,11 @@ p {
 }
 strong {
   font-size: 23px;
+  line-height: 29.7px;
+  color: #00395d;
+}
+.avia_textblock strong {
+  font-size: 18px;
   line-height: 29.7px;
   color: #00395d;
 }
